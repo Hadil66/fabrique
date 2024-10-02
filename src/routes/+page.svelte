@@ -1,3 +1,9 @@
+<script>
+    import './global.css';
+   
+</script>
+
+
 <nav>
     <div class="logo"></div>
     <h1>Qatar Museums</h1>
@@ -18,7 +24,7 @@
             <span> زيارة </span>  <!-- Arabic for Visit -->
             Visit
         </li>
-        <li>tickets</li>
+        <li class="ticket-nav-item">tickets</li>
         <li>members</li>
         <li>venues</li>
     </ul>
@@ -26,3 +32,13 @@
         <!-- hamburger logo with drompdown -->
     </div>
 </nav>
+
+<style>
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+    }
+</style>
