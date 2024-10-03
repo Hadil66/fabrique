@@ -81,16 +81,11 @@
         align-items: center;
         width: 	100%;
     }
-    /* Ul */
 
+    /* Ul */
     nav ul {
         list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        margin-right: 1rem;
-        justify-content: flex-end;
-        width: 100%;
+        display: none;
     }
 
     nav ul li {
@@ -133,7 +128,7 @@
 
     .menu-icon {
         display: block;
-        width: 35px;
+        width: 26px;
         height: 8px;
         position: relative;
         cursor: pointer;
@@ -156,22 +151,35 @@
         }
     }
 
-    @media (max-width: 1020px) {
-    ul li:not(.ticket-nav-item) {
-        display: none; 
-        
+    @media (max-width: 900px) {
+        ul li:not(.ticket-nav-item) {
+        display: none; /* Hide all except the ticket-nav-item */
     }
-    nav {
+
+    .ticket-nav-item {
+        display: block; /* Make sure the ticket-nav-item is always visible */
+    }
+    /* nav {
             min-width: 20rem;
-        }
+        } */
     }
+   
 
     /* Desktop */
     @media (min-width: 1020px) {
     
-        ul li { 
-            display: block;
+        nav ul { 
+          
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-right: 1rem;
+            justify-content: flex-end;
+            width: 100%;
         }
     
     }   
+    .menu-button {
+        display: block;
+    }
 </style>
