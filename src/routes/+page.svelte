@@ -47,7 +47,7 @@
 
 <style>
 
- 
+ /* NAV BAR */
     nav {
         display: flex;
         align-items: center; /* Center the items vertically */
@@ -60,14 +60,13 @@
         border-bottom: 1px solid #000;
         width: 100%;
         height: 4rem;
-     
     }
     
-
     .title {
         margin-left: 0.5rem;    
         white-space: nowrap;  
     }
+    /* LOGO */
     
     .logo-qatar {
         object-fit: cover;
@@ -82,6 +81,7 @@
         align-items: center;
         width: 	100%;
     }
+    /* Ul */
 
     nav ul {
         list-style: none;
@@ -91,8 +91,8 @@
         margin-right: 1rem;
         justify-content: flex-end;
         width: 100%;
-  
     }
+
     nav ul li {
         white-space: nowrap; /* Prevent line breaks */
     }
@@ -120,6 +120,7 @@
         font-size: 20px;
     }
 
+    /* MENU BUTTON  */
     .menu-button {
         background-color:transparent;
         border: none;
@@ -130,52 +131,47 @@
         margin-bottom: 0;
     }
 
-.menu-icon {
-    display: block;
-    width: 35px;
-    height: 8px;
-    position: relative;
-    cursor: pointer;
-}
-
-.menu-icon span {
-    display: block;
-    width: 100%;
-    height: 2.2px;
-    background-color: #000;
-    margin-bottom: 4px;
-  
-}
-
-
- /* Hide TICKETS on screens smaller than 360px */
-@media (max-width: 359px) {
-    .ticket-nav-item {
-        display: none;
-    }
-}
-
-@media (max-width: 1020px) {
-ul li:not(.ticket-nav-item) {
-    display: none; 
-       
-}
-nav {
-        min-width: 20rem;
-    }
-}
-
-/* Desktop */
-@media (min-width: 1020px) {
-  
-    ul li { 
+    .menu-icon {
         display: block;
+        width: 35px;
+        height: 8px;
+        position: relative;
+        cursor: pointer;
     }
-   
-}
 
+    .menu-icon span {
+        display: block;
+        width: 100%;
+        height: 2.2px;
+        background-color: #000;
+        margin-bottom: 4px;
+    }
 
+/*  MEDIA QUERY */
 
+    /* Hide Tickets on screens smaller than 360px */
+    @media (max-width: 359px) {
+        .ticket-nav-item {
+            display: none;
+        }
+    }
 
+    @media (max-width: 1020px) {
+    ul li:not(.ticket-nav-item) {
+        display: none; 
+        
+    }
+    nav {
+            min-width: 20rem;
+        }
+    }
+
+    /* Desktop */
+    @media (min-width: 1020px) {
     
+        ul li { 
+            display: block;
+        }
+    
+    }   
 </style>
