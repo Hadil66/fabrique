@@ -1,7 +1,7 @@
 <nav>
     <div class="logo-container">
         <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums">
-        <p class="title">Qatar Museums</p>
+        <p class="title">  <span>متاحف قطر</span> Qatar Museums</p>
     </div>
    
     <ul>
@@ -20,10 +20,16 @@
         <li class="ticket-nav-item">TICKETS</li>
         <li>MEMBERS</li>
         <li>VENUES</li>
-        <button class="menu-button">MENU</button>
+        
     </ul>
-    <div>
-        </div>
+    <span class="menu-icon">
+        <span></span>
+        <span></span>
+
+    </span>
+    <button class="menu-button">MENU</button>
+  
+
 </nav>
 
 <style>
@@ -37,21 +43,26 @@
         font-size: 16px;
         line-height: 20px;
         border-bottom: 1px solid #000;
+        width: 100%;
     }
 
     .title {
-        margin-left: 0.5rem;
+        margin-left: 0.5rem;    
+        white-space: nowrap;  
     }
     
     .logo-qatar {
         object-fit: cover;
-        width: 5rem;
+        width:7rem ;
         height: 5rem;
+        scale: 0.8;
     }
  
     .logo-container {
         display: flex;
         align-items: center;
+        width: 	100%;
+   
     }
 
     ul {
@@ -59,9 +70,12 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        margin-right: 50px; /* Adjust margin-right to move the ul to the right */
+        margin-right: 1rem;
         justify-content: flex-end;
+        width: 100%;
+        padding: 0;
     }
+
     ul li:hover {
         text-decoration: underline;
         cursor: pointer;
@@ -69,7 +83,7 @@
 
     .ticket-nav-item {
         background-color: yellow;
-        padding: 1rem;
+        padding: 0.5rem;
         border: #000 solid 1px;
     }
 
@@ -94,4 +108,52 @@
         font-size: 16px;
     }
 
+.menu-icon {
+    display: block;
+    width: 35px;
+    height: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 100%;
+    height: 2.2px;
+    background-color: #000;
+    margin-bottom: 4px;
+  
+}
+
+
+ /* Hide TICKETS on screens smaller than 360px */
+@media (max-width: 359px) {
+    .ticket-nav-item {
+        display: none;
+    }
+}
+
+@media (max-width: 1020px) {
+ul li:not(.ticket-nav-item) {
+    display: none; 
+       
+}
+nav {
+        min-width: 20rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1020px) {
+  
+    ul li { 
+        display: block;
+    }
+   
+}
+
+
+
+
+    
 </style>
