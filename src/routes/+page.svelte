@@ -3,22 +3,11 @@
     console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
 </script>
 
-{#each data.artObjects as art}
-    <ul>
-        <li>
-            <h2>{art.title}</h2>
-            <img src={"https://fdnd-agency.directus.app/assets/" + art.image} alt={art.title} />
-        </li>
-    </ul>
-{/each}
-
-
 <nav>
     <div class="logo-container">
         <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums">
         <p class="title">  <span>متاحف قطر</span> Qatar Museums</p>
-    </div>
-   
+    </div>  
     <ul>
         <li>
             <span>قصص</span> STORIES
@@ -43,11 +32,22 @@
 
     </span>
     <button class="menu-button">MENU</button>
-  
-
 </nav>
 
+
+{#each data.artObjects as art}
+    <ul>
+        <li>
+            <h2>{art.title}</h2>
+            <img src={"https://fdnd-agency.directus.app/assets/" + art.image} alt={art.title} />
+        </li>
+    </ul>
+{/each}
+
+
 <style>
+
+ 
     nav {
         display: flex;
         align-items: center; /* Center the items vertically */
@@ -59,7 +59,10 @@
         line-height: 20px;
         border-bottom: 1px solid #000;
         width: 100%;
+        height: 4rem;
+     
     }
+    
 
     .title {
         margin-left: 0.5rem;    
@@ -71,16 +74,16 @@
         width:7rem ;
         height: 5rem;
         scale: 0.8;
+        background-color: transparent;
     }
  
     .logo-container {
         display: flex;
         align-items: center;
         width: 	100%;
-   
     }
 
-    ul {
+    nav ul {
         list-style: none;
         display: flex;
         align-items: center;
@@ -88,10 +91,13 @@
         margin-right: 1rem;
         justify-content: flex-end;
         width: 100%;
-        padding: 0;
+  
+    }
+    nav ul li {
+        white-space: nowrap; /* Prevent line breaks */
     }
 
-    ul li:hover {
+    nav ul li:hover {
         text-decoration: underline;
         cursor: pointer;
     }
@@ -121,6 +127,7 @@
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
+        margin-bottom: 0;
     }
 
 .menu-icon {
