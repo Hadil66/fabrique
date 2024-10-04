@@ -13,6 +13,7 @@
                     <a href="#" class="button">Meer info</a>
                </figcaption>
             </figure>
+
         </li>
     {/each}
     </ul>
@@ -104,5 +105,5 @@
             h2{
             font-size: 1.5rem;
             }
-        }
-    </style>
+      }
+</style>
