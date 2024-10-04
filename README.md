@@ -1,5 +1,7 @@
+# README: Qatar Museums online collection website
+
 ### Inleiding
-Dit project betreft het ontwerpen en ontwikkelen van nieuwe functies voor de Qatar Museums Online Collection website. De hoofdpagina bevat een oneindig canvas waarop gebruikers in alle richtingen kunnen scrollen. Het canvas toont objecten die willekeurig geladen en geplaatst zijn, en deze objecten zijn aanklikbaar. Er is ook een filteroptie die niet toepasselijke objecten dimt bij hover.
+Dit project betreft het ontwerpen en ontwikkelen van nieuwe functies voor de Qatar Museums online collection website. De hoofdpagina bevat een oneindig canvas waarop gebruikers in alle richtingen kunnen scrollen. Het canvas toont objecten die willekeurig geladen en geplaatst zijn, en deze objecten zijn aanklikbaar. Er is ook een filteroptie die niet toepasselijke objecten dimt bij hover.
 
 ### Functies
 - Oneindig canvas: Scroll in alle richtingen met willekeurige objecten.
