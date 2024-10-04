@@ -12,8 +12,4 @@
     </ul>
 {/each}
 
-<style>
-    img {
-        height: 150px;
-    }
-</style>
+
