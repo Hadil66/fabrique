@@ -12,3 +12,5 @@
         </li>
     </ul>
 {/each}
+
+<style>img{width: 100px;}</style>
