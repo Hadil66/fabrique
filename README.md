@@ -1,3 +1,18 @@
+# README: Qatar Museums online collection website
+
+### Inleiding
+Dit project betreft het ontwerpen en ontwikkelen van nieuwe functies voor de Qatar Museums online collection website. De hoofdpagina bevat een oneindig canvas waarop gebruikers in alle richtingen kunnen scrollen. Het canvas toont objecten die willekeurig geladen en geplaatst zijn, en deze objecten zijn aanklikbaar. Er is ook een filteroptie die niet toepasselijke objecten dimt bij hover.
+
+### Functies
+- Oneindig canvas: Scroll in alle richtingen met willekeurige objecten.
+- Aanklikbare objecten: Klik voor meer details.
+- Filters: Dim objecten bij hover, klik voor meer filters.
+- SEO-vriendelijk: Pagina geoptimaliseerd voor zoekmachines.
+- Toegankelijkheid: Ondersteunt navigatie met toetsenbord.
+- Responsief ontwerp: Werkt op mobiel, tablet en desktop.
+- Meertalig: Ondersteuning voor Engels en Arabisch (RTL).
+
+# Installatie
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
