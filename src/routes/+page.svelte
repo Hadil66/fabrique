@@ -4,11 +4,7 @@
 </script>
 
 
-{#each data.artObjects as art}
-    <ul>
-        <li>
-            <h2>{art.title}</h2>
-            <img src={"https://fdnd-agency.directus.app/assets/" + art.image} alt={art.title} />
+
 <ul class="masonry">
     {#each data.artObjects as art}
         <li class="masonry-item">
@@ -23,7 +19,6 @@
         </li>
     {/each}
     </ul>
-{/each}
 
     <style>
         .masonry {
