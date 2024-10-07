@@ -145,9 +145,7 @@
        .ticket-nav-item {
            display: block; /* Make sure the ticket-nav-item is always visible */
        }
-       /* nav {
-               min-width: 20rem;
-           } */
+ 
        }
       
    
