@@ -12,4 +12,4 @@ export async function load(){
         artObjects: response.data
     };
 }
-}
+
