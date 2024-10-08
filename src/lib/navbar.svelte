@@ -90,7 +90,8 @@ nav ul li:hover {
 
 .ticket-nav-item {
     background-color: yellow;
-    padding: 0.5rem;
+    padding: 0.4rem;
+    font-size: 16px;
     border: #000 solid 1px;
 }
 
@@ -133,9 +134,18 @@ span {
     margin-bottom: 4px;
 }
 
+
 /* MEDIA QUERY */
 
-@media (max-width: 900px) {
+@media (max-width: 450px) {
+
+.ticket-nav-item {
+        display: none; 
+      
+    }
+}
+
+@media (max-width: 990px) {
     nav ul {
         display: flex; 
     }
@@ -147,7 +157,9 @@ span {
 
     .ticket-nav-item {
         display: block; 
+      
     }
+  
 }
 
 @media (min-width: 1020px) {
@@ -164,8 +176,5 @@ span {
     }
 }
 
-.menu-button {
-    display: block;
-}
 
    </style>
