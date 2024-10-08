@@ -25,8 +25,6 @@
 </ul>
 
 <!-- Filters/search workspace Ellenoor-->
-<input type="text" bind:value={filterText} placeholder="Search by title" />
-
 <div class="filteredList">
 	<button class="filter-option" data-filter="*" tabindex="0">All objects</button>
 	<button class="filter-option" data-filter="Pottery" tabindex="0">Pottery</button>
