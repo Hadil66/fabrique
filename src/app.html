@@ -1,12 +1,33 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
+
+<head>
+	<title> Fabrique </title>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	%sveltekit.head%
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DIN+Next:regular,bold,italic,bolditalic">
+		<link rel="stylesheet" href="./css/global.css">
+
+
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
+</head>
+
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">%sveltekit.body%</div>
+</body>
+
+
+	<style>
+		body {
+			margin: 0;
+      		font-family: 'DIN Next', sans-serif;
+		}
+	</style>
 </html>
