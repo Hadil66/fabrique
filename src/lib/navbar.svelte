@@ -155,10 +155,7 @@ span {
         display: none;
     }
 
-    /* .ticket-nav-item {
-        display: block; 
-      
-    } */
+
   
 }
 
