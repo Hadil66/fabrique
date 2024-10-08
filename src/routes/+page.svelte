@@ -24,7 +24,7 @@
 	{/each}
 </ul>
 
-<!-- Filters workspace -->
+<!-- Filters/search workspace Ellenoor-->
 <input type="text" bind:value={filterText} placeholder="Search by title" />
 
 <div class="filteredList">
@@ -48,6 +48,8 @@
 		</button>
 	</div>
 </div>
+
+<!-- Filters/search workspace Ellenoor-->
 
 <style>
 	* {
@@ -232,4 +234,7 @@
 			display: flex;
 		}
 	}
+	/* ---- */
+	/* Styling Ellenoor */
+	/* ---- */
 </style>
