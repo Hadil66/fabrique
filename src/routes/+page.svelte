@@ -1,10 +1,10 @@
 <!-- Filters workspace -->
 <div class="filteredList">
-	<button class="filter-option" data-filter="*" tabindex="-1">All objects</button>
-	<button class="filter-option" data-filter="Pottery" tabindex="-1">Pottery</button>
-	<button class="filter-option" data-filter="Islamic art" tabindex="-1">Islamic art</button>
-	<button class="filter-option" data-filter="Tapestry" tabindex="-1">Tapestry</button>
-	<button class="filter-option" data-filter="Glass" tabindex="-1">Glass</button>
+	<button class="filter-option" data-filter="*" tabindex="0">All objects</button>
+	<button class="filter-option" data-filter="Pottery" tabindex="0">Pottery</button>
+	<button class="filter-option" data-filter="Islamic art" tabindex="0">Islamic art</button>
+	<button class="filter-option" data-filter="Tapestry" tabindex="0">Tapestry</button>
+	<button class="filter-option" data-filter="Glass" tabindex="0">Glass</button>
 </div>
 
 <style>
@@ -23,6 +23,11 @@
 		margin-right: 0.5em;
 	}
 
+    .filter-option:focus {
+  outline: 5px solid #007bff;
+  
+}
+
 	.filteredList {
 		position: absolute;
 		bottom: 5em;
@@ -37,7 +42,6 @@
 			overflow: hidden;
 			display: flex;
 			left: 2em;
-			justify-content: center;
 		}
 	}
 </style>
