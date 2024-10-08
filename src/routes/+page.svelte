@@ -1,12 +1,14 @@
-
-
 <script>
 export let data;
     console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
   
 	import Search from '$lib/Search.svelte';
 	let filterText = '';
+  import Navbar from '$lib/navbar.svelte';
+
 </script>
+
+<Navbar />
 
 <ul class="masonry">
     {#each data.artObjects as art}
@@ -183,5 +185,3 @@ export let data;
 		}
 	}
 </style>
-
-
