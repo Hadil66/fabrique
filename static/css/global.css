@@ -19,3 +19,9 @@
     --h2-font:2px;
     --h3-font:22px;
 }
+
+
+* {
+    box-sizing: border-box;
+}
+

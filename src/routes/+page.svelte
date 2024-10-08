@@ -1,3 +1,5 @@
+
+
 <script>
 export let data;
     console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
@@ -181,4 +183,5 @@ export let data;
 		}
 	}
 </style>
+
 
