@@ -23,10 +23,12 @@
 		margin-right: 0.5em;
 	}
 
-    .filter-option:focus {
-  outline: 5px solid #007bff;
-  
-}
+	.filter-option:focus {
+		outline: 2px solid #007bff;
+		box-shadow: 0 0 0 2px #007bff;
+		background-color: #007bff;
+		color: #ffffff;
+	}
 
 	.filteredList {
 		position: absolute;
@@ -38,10 +40,9 @@
 	@media only screen and (min-width: 600px) {
 		.filteredList {
 			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
 			bottom: 6.7em;
-			overflow: hidden;
-			display: flex;
-			left: 2em;
 		}
 	}
 </style>
