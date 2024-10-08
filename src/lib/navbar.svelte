@@ -1,3 +1,12 @@
+<script>
+    import Dropdown from '$lib/Dropdown.svelte'
+
+	let showMenu = false;
+	function toggleMenu() {
+        showMenu = !showMenu;
+      }
+
+</script>
 
 <nav>
     <div class="logo-container">
@@ -22,12 +31,7 @@
         <li>VENUES</li>
         
     </ul>
-    <span class="menu-icon">
-        <span></span>
-        <span></span>
-
-    </span>
-    <button class="menu-button">MENU</button>
+    <Dropdown />    
 </nav>
 
 
@@ -57,7 +61,7 @@ nav {
 .logo-qatar {
     object-fit: cover;
     width:7rem ;
-    height: 5rem;
+    /* height: 5rem; */
     scale: 0.8;
     background-color: transparent;
 }
@@ -107,33 +111,6 @@ span {
     font-size: 20px;
 }
 
-/* MENU BUTTON  */
-.menu-button {
-    background-color:transparent;
-    border: none;
-    font-family: 'DIN Next', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 0;
-}
-
-.menu-icon {
-    display: block;
-    width: 26px;
-    height: 8px;
-    position: relative;
-    cursor: pointer;
-}
-
-.menu-icon span {
-    display: block;
-    width: 100%;
-    height: 2.2px;
-    background-color: #000;
-    margin-bottom: 4px;
-}
-
 
 /* MEDIA QUERY */
 
@@ -154,9 +131,6 @@ span {
     nav ul li:not(.ticket-nav-item) {
         display: none;
     }
-
-
-  
 }
 
 @media (min-width: 1020px) {

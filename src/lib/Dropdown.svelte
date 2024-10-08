@@ -17,7 +17,8 @@
 				stroke-linejoin="round"
 			/>
 		</g>
-	</svg>
+	</svg>     
+	<span class="hidden-text">Menu</span>
 </button>
 <div id="dropdownmenu" class:showMenu>
     <div class="img-container">
@@ -144,6 +145,11 @@
 
 	#dropdownmenu {
 		display: none;
+		z-index: 66;
+	}
+
+	.img-container {
+		display: none;
 	}
 
 	#menuIMG {
@@ -250,6 +256,12 @@
 		border-bottom: none;
 		font-size: 1.2em;
 		font-weight: 100;
+	}
+
+	@media (max-width: 500px) {
+		.hidden-text {
+			display: none;	
+		}
 	}
 
 	@media (min-width: 530px) {
