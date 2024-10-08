@@ -1,9 +1,10 @@
 <script>
-    export let data;
+export let data;
     console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
+  
+	import Search from '$lib/Search.svelte';
+	let filterText = '';
 </script>
-
-
 
 <ul class="masonry">
     {#each data.artObjects as art}
@@ -20,8 +21,27 @@
     {/each}
     </ul>
 
-    <style>
-        .masonry {
+<div class="wrap">
+	<div class="search">
+		<input
+			type="text"
+			class="searchTerm"
+			bind:value={filterText}
+			placeholder="Search the collection"
+		/>
+		<button type="submit" class="searchButton" aria-label="Submit search">
+			<Search />
+		</button>
+	</div>
+</div>
+
+<style>
+	* {
+		transition: 0.2s;
+		font-family: 'DIN Next', sans-serif;
+	}
+  
+          .masonry {
             column-count: 1;
             column-gap: 1rem;
             list-style: none;
@@ -107,4 +127,58 @@
             font-size: 1.5rem;
             }
       }
+
+	.search {
+		width: 100vw;
+		position: relative;
+		display: flex;
+	}
+
+	.searchTerm {
+		width: 100%;
+		border: 2px solid black;
+		border-right: none;
+		padding: 0.5em 0 0 0.5em;
+		color: #707070;
+		font-size: 25px;
+		text-decoration: underline black;
+	}
+
+	.searchTerm:focus {
+		color: black;
+	}
+
+	.searchButton {
+		width: 4em;
+		height: 5.3em;
+		padding: 0.5em;
+		border-left: none;
+		background: white;
+		text-align: center;
+		justify-content: center;
+		color: black;
+		cursor: pointer;
+	}
+
+	/*Resize the wrap to see the search bar change!*/
+	.wrap {
+		position: absolute;
+		bottom: 0;
+	}
+
+	@media only screen and (min-width: 600px) {
+		.wrap {
+			position: absolute;
+			bottom: 4em;
+			left: 2em;
+			right: 2em;
+		}
+
+		.search {
+			width: 90vw;
+			position: relative;
+			display: flex;
+		}
+	}
 </style>
+
