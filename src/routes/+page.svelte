@@ -1,8 +1,7 @@
 <script>
 export let data;
     console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
-  
-	import Search from '$lib/Search.svelte';
+	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
 	let filterText = '';
 </script>
 
