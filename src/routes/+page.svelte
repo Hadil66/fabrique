@@ -167,10 +167,11 @@
 	}
 
 	.filteredList {
-		position: absolute;
+		position: fixed;
 		bottom: 5em;
 		overflow: scroll;
 		display: flex;
+        margin-left: 1em;
 	}
 
 	/* Styling voor de zoekbalk */
@@ -207,14 +208,14 @@
 	}
 
 	.wrap {
-		position: absolute;
+		position: fixed;
 		bottom: 0;
 	}
 
 	@media only screen and (min-width: 600px) {
 		/* Code voor filter buttons */
 		.filteredList {
-			position: absolute;
+			position: fixed;
 			left: 50%;
 			transform: translateX(-50%);
 			bottom: 6.7em;
@@ -223,15 +224,17 @@
 		/* Code voor zoekbalk  */
 		.wrap {
 			position: absolute;
-			bottom: 4em;
+			bottom: 6em;
 			left: 2em;
 			right: 2em;
 		}
 
 		.search {
-			width: 90vw;
-			position: relative;
+			width: 60vw;
+			position: fixed;
 			display: flex;
+            left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 	/* ---- */
