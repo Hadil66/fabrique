@@ -45,6 +45,7 @@ export let data;
 			<Search />
 		</button>
 	</div>
+    </div>
 
 <style>
 	* {
