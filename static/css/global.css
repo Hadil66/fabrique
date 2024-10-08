@@ -2,10 +2,10 @@
     /* colors */
     --default-text-color-dark:#000;
     --default-text-color-light:#fff;
-
     --body-background-color:#fff;
     --navbar-background-color:#fff;
     --navbar-ticket-color:#FAFF1E;
+    --nav-bg: #ffff00;
     --filter-background-color:#464646;
     --filter-background-color-hover:#7d7d7d;  
 
@@ -19,3 +19,9 @@
     --h2-font:2px;
     --h3-font:22px;
 }
+
+
+* {
+    box-sizing: border-box;
+}
+
