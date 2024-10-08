@@ -1,10 +1,32 @@
 <script>
+     import Lenis from '@studio-freight/lenis';
+  
+     import { onMount } from 'svelte';
+    
+    let lenis;
+
+    onMount(() => {
+        // This block will only run in the browser
+        lenis = new Lenis({
+            infinite: true,
+            syncTouch: true
+        });
+
+        function onRaf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(onRaf);
+        }
+
+        requestAnimationFrame(onRaf);
+    });
+
+ 
     export let data;
     console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
 </script>
 
 
-
+<div class="scroll-container">
 <ul class="masonry">
     {#each data.artObjects as art}
         <li class="masonry-item">
@@ -18,38 +40,75 @@
 
         </li>
     {/each}
+
+        <!-- Repeat the items for infinite scroll effect -->
+        {#each data.artObjects as art, i (art.id)}<!-- Doorloop de data.artObjects array en render elk item -->
+        <!-- Voor elk art object wordt de bijbehorende HTML gegenereerd.
+            i is de index van het huidige element in de lus.
+            (art.id) zorgt ervoor dat elk item een unieke sleutel heeft, wat Svelte helpt om efficiënt te renderen. -->
+            <li class="masonry-item">
+                <figure>
+                    <img src={"https://fdnd-agency.directus.app/assets/" + art.image} alt={art.title} />
+                    <figcaption>
+                        <h2>{art.title}</h2>
+                        <a href="#" class="button">Meer info</a>
+                    </figcaption>
+                </figure>
+            </li>
+        {/each}
     </ul>
-
+</div>
     <style>
-        .masonry {
-            column-count: 1;
-            column-gap: 1rem;
-            list-style: none;
-            padding: 0;
-        }
-    
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+       
+       
+   
+       .masonry {
+		column-count: 1;
+		column-gap: 1rem;
+		list-style: none;
+		padding: 0;
+	}
 
-        figure{
-            margin: 0;
-            position: relative;
-        }
-    
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-            transition: transform 0.3s ease-in-out;
-        }
+	.masonry-item {
+		break-inside: avoid;
+		margin-bottom: 1rem;
+		position: relative;
+		overflow: hidden;
+		background-color: #fff;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	figure {
+		margin: 0;
+		position: relative;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 8px;
+		transition: transform 0.3s ease-in-out;
+	}
+
+	/* overlay */
+
+	figcaption {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
 
         /* overlay */
 
