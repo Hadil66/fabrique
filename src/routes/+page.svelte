@@ -1,36 +1,46 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
 <!-- Filters workspace -->
-<!-- Control buttons -->
 <div class="filteredList">
-    <h3>Filters</h3>
-    <button class="filter-option" data-filter="walks" tabindex="-1">Walks</button> 
-    <button class="filter-option" data-filter="swims" tabindex="-1">Swims</button> 
-    <button class="filter-option" data-filter="flies" tabindex="-1">Flies</button> 
-    <button class="filter-option" data-filter="*" tabindex="-1">All</button>
-
-    <h3>Animals</h3>
-    <div class="dog walks">Dog</div>
-    <div class="eagle flies">Eagle</div>
-    <div class="cow walks">Cow</div>
-    <div class="shark swims">Shark</div>
-    <div class="canary flies">Canary</div>
-    <div class="human walks">Human</div>
-    <div class="salamander swims walks">Salamander</div>
+    <button class="filter-option" data-filter="*" tabindex="-1">All objects</button>
+    <button class="filter-option" data-filter="Pottery" tabindex="-1">Pottery</button> 
+    <button class="filter-option" data-filter="Islamic art" tabindex="-1">Islamic art</button> 
+    <button class="filter-option" data-filter="Tapestry" tabindex="-1">Tapestry</button> 
+    <button class="filter-option" data-filter="Glass" tabindex="-1">Glass</button> 
   </div>
 
+
 <style>
-button[data-filter="walks"]:focus ~ div:not([class*="walks"]) {
-  display:none;
+* {
+		transition: 0.2s;
+		font-family: 'DIN Next', sans-serif;
+	}
+
+.filter-option{
+    background-color: #464646;
+    color: white;
+    border: none;
+    height: 50px;
+    width: 100px;
+    font-size: 19px;
+    margin-right: .5em;
 }
 
-button[data-filter="swims"]:focus ~ div:not([class*="swims"]) {
-  display:none;
+.filteredList{
+    position: absolute;
+    bottom: 5em;
+    overflow: scroll;
+    display: flex;
 }
 
-button[data-filter="flies"]:focus ~ div:not([class*="flies"]) {
-  display:none;
+	@media only screen and (min-width: 600px) {
+        .filteredList{
+    position: absolute;
+    bottom: 6.7em;
+    overflow: hidden;
+    display: flex;
+    left: 2em;
+    justify-content: center;
 }
-
+	}
 </style>
+
+
