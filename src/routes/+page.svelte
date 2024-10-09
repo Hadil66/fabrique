@@ -5,7 +5,8 @@
 	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
 	let filterText = '';
     
-	import navbar from '$lib/navbar.svelte';
+	import Nav from '$lib/Navbar.svelte';
+
 </script>
 <Nav />
 <ul class="masonry">
