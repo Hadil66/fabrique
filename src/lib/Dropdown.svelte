@@ -66,18 +66,24 @@
 			</button>
 		</div>
 		<ul>
-			<a href="#"
-				><div class="arabic">قصصنا</div>
-				stories
-			</a>
-			<a href="#"
-				><div class="arabic">الفعاليات</div>
-				what's on</a
-			>
-			<a href="#"
-				><div class="arabic">زيارة</div>
-				visit
-			</a>
+			<li>
+				<a href="#">
+					<div class="arabic">قصصنا</div>
+					stories
+				</a>
+			</li>
+			<li>
+				<a href="#">
+				<div class="arabic">الفعاليات</div>
+				what's on
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="arabic">زيارة</div>
+					visit
+				</a>
+			</li>
 		</ul>
 		<h3>Find everything for</h3>
 		<ul>
