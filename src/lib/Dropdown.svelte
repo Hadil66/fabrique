@@ -294,6 +294,7 @@
         .img-container {
             position: relative;
             width: fit-content;
+			display: none;
         }
 
         .img-container img {
@@ -348,6 +349,10 @@
 			grid-template-rows: repeat(5, 0.25fr);
 			overflow-x: hidden;
 			width: 100vw;
+		}
+
+		.img-container {
+		display: block;
 		}
 
 		#menuIMG {
