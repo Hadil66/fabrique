@@ -11,24 +11,36 @@
 <nav>
     <div class="logo-container">
         <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums">
-        <p class="title">  <span>متاحف قطر</span> Qatar Museums</p>
+       <a href="#"><p class="title">  <span>متاحف قطر</span> Qatar Museums</p></a> 
     </div>  
     <ul>
         <li>
-            <span>قصص</span> STORIES
+            <span>قصص</span>
+            <a href="#"> STORIES</a>
         </li>
         <li>
-            <span>ما هو الجديد</span> WHAT'S ON
+            <span>ما هو الجديد</span> 
+            <a href="#"> WHAT'S ON</a>
         </li>
         <li>
-            <span>المجموعة</span> COLLECTION
+            <span>المجموعة</span> 
+            <a href="#"> COLLECTION</a>
         </li>
         <li>
-            <span>زيارة</span> VISIT
+            <span>زيارة</span> 
+            <a href="#">VISIT</a>
         </li>
-        <li class="ticket-nav-item">TICKETS</li>
-        <li>MEMBERS</li>
-        <li>VENUES</li>
+        <li>
+            <a  class="ticket-nav-item" href="#"> TICKETS</a>
+           </li>
+        <li>
+            <a href="#"> MEMBERS</a>
+           
+        </li>
+        <li>
+            <a href="#">VENUES</a>
+            
+        </li>
         
     </ul>
     <Dropdown />    
@@ -52,6 +64,10 @@ nav {
     height: 4rem;
 }
 
+a {
+    color:#000;
+    text-decoration: none;
+}
 .title {
     margin-left: 0.5rem;    
     white-space: nowrap;  
