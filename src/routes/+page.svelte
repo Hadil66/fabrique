@@ -5,9 +5,9 @@
 	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
 	let filterText = '';
     
-	import Navbar from '$lib/navbar.svelte';
+	import navbar from '$lib/navbar.svelte';
 </script>
-
+<Nav />
 <ul class="masonry">
 	{#each data.artObjects.filter((art) => art.title
 			.toLowerCase()
