@@ -9,10 +9,12 @@
 </script>
 
 <nav>
-    <div class="logo-container">
-        <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums">
-       <a href="#"><p class="title">  <span>متاحف قطر</span> Qatar Museums</p></a> 
-    </div>  
+    <a href="#">
+        <div class="logo-container">
+            <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums">
+            <p class="title">  <span>متاحف قطر</span> Qatar Museums</p>  
+        </div>  
+    </a>
     <ul>
         <li>
             <span>قصص</span>
