@@ -1,5 +1,5 @@
 # Qatar Museums online collection website
-<img src="https://share.icloud.com/photos/03730YBSzBQvhv9ZiC_vSLBcA">
+<img src="https://github.com/user-attachments/assets/9930c340-1985-4fbb-8a01-09cbe34b4112" width="700px">
 
 ### Inleiding
 Dit project betreft het ontwerpen en ontwikkelen van nieuwe functies voor de Qatar Museums online collection website. De hoofdpagina bevat een oneindig canvas waarop gebruikers in alle richtingen kunnen scrollen. Het canvas toont objecten die willekeurig geladen en geplaatst zijn, en deze objecten zijn aanklikbaar. Er is ook een filteroptie die niet toepasselijke objecten dimt bij hover.
