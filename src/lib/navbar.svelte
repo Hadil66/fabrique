@@ -62,6 +62,10 @@ nav {
     border-bottom: 1px solid #000;
     width: 100%;
     height: 4rem;
+    osition: fixed;
+    z-index: 33;
+    background: white;
+    top: 0;
 }
 
 a {
