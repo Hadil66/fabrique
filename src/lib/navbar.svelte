@@ -81,7 +81,6 @@ a {
 .logo-qatar {
     object-fit: cover;
     width:7rem ;
-    /* height: 5rem; */
     scale: 0.8;
     background-color: transparent;
 }
@@ -166,6 +165,4 @@ span {
         display: block; /* Ensure all li items are visible on desktop */
     }
 }
-
-
-   </style>
+</style>

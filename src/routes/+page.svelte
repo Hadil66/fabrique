@@ -143,9 +143,8 @@
 		}
 	}
 
-	/* ---- */
 	/* Styling Ellenoor */
-	/* ---- */
+
 	/* Styling voor filter buttons */
 	.filter-option {
 		background-color: #464646;
@@ -155,6 +154,7 @@
 		width: 100px;
 		font-size: 19px;
 		margin-right: 0.5em;
+		cursor: pointer;
 	}
 
 	/* Styling voor tab functie */
