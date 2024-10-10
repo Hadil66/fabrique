@@ -13,5 +13,5 @@ export async function load(){
     };
 }
 
-/** @type {import('@sveltejs/adapter-vercel').Config} */export const config = {	runtime: 'nodejs18.x'}
+/** @type {import('@sveltejs/adapter-vercel').Config} */export const config = {	runtime: 'edge'}
 
