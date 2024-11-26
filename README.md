@@ -14,7 +14,7 @@ Dit project betreft het ontwerpen en ontwikkelen van nieuwe functies voor de Qat
 - Meertalig: Ondersteuning voor Engels en Arabisch (RTL).
 
 # Installatie
-# create-svelte
+## create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
