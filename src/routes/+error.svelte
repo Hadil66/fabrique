@@ -5,7 +5,7 @@
 	console.log($page.status);
 </script>
 
-<a href="/#">
+<a href="/">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="#000000"

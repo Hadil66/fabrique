@@ -1,10 +1,16 @@
-# Qatar Museums online collection website
-<img src="https://github.com/user-attachments/assets/9930c340-1985-4fbb-8a01-09cbe34b4112" width="700px">
+# Qatar museums
+![Qatar Museums Mock up](https://github.com/user-attachments/assets/d9b79b0e-ec08-4e4b-8779-15d75dbc0eaf)
 
-### Inleiding
-Dit project betreft het ontwerpen en ontwikkelen van nieuwe functies voor de Qatar Museums online collection website. De hoofdpagina bevat een oneindig canvas waarop gebruikers in alle richtingen kunnen scrollen. Het canvas toont objecten die willekeurig geladen en geplaatst zijn, en deze objecten zijn aanklikbaar. Er is ook een filteroptie die niet toepasselijke objecten dimt bij hover.
 
-### Functies
+## Inleiding
+Dit project betreft het ontwerpen en ontwikkelen van nieuwe functies voor de Qatar Museums online collection website. 
+De hoofdpagina bevat een oneindig canvas waarop gebruikers in alle richtingen kunnen scrollen.
+Het canvas toont objecten die willekeurig geladen en geplaatst zijn, en deze objecten zijn aanklikbaar.
+Er is ook een filteroptie die niet toepasselijke objecten dimt bij hover.
+
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+
+## Functies
 - Oneindig canvas: Scroll in alle richtingen met willekeurige objecten.
 - Aanklikbare objecten: Klik voor meer details.
 - Filters: Dim objecten bij hover, klik voor meer filters.
@@ -13,21 +19,18 @@ Dit project betreft het ontwerpen en ontwikkelen van nieuwe functies voor de Qat
 - Responsief ontwerp: Werkt op mobiel, tablet en desktop.
 - Meertalig: Ondersteuning voor Engels en Arabisch (RTL).
 
-# Installatie
-# create-svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
+##Installatie 
 ## Creating a project
 
 If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
 # create a new project in the current directory
-npm create svelte@latest
+npx sv create
 
 # create a new project in my-app
-npm create svelte@latest my-app
+npx sv create my-app
 ```
 
 ## Developing
@@ -51,4 +54,4 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

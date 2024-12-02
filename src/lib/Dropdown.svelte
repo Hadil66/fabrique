@@ -157,7 +157,7 @@
 
   #dropdownmenu {
     display: none;
-    z-index: 66;
+    z-index: 966;
   }
 
   .img-container {
