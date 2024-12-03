@@ -2,6 +2,8 @@
 	export let data;
 	console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
 
+	import Header from '$lib/molecules/Header.svelte';
+
 	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
 	let filterText = '';
     
@@ -22,6 +24,8 @@ import { activeFilter } from "$lib/store";
   
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
   </script>
+
+  <Header />
 
 <div class="scroll-container"
 bind:this={scrollContainer}
