@@ -5,8 +5,6 @@
 	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
 	let filterText = '';
     
-	import Navbar from '$lib/Navbar.svelte';
-
 	import Searchbar from '$lib/molecules/searchbar.svelte';
 
 	let scrollContainer; // variable scroll container. 
@@ -25,7 +23,6 @@ import { activeFilter } from "$lib/store";
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
   </script>
 
-<Navbar />
 <div class="scroll-container"
 bind:this={scrollContainer}
   on:scroll={handleScroll}>

@@ -67,16 +67,16 @@
     ul li button:focus,
     ul li button:hover {
       box-shadow: 2px 2px 2px #989802;
-      background-color: #ffff00;
-      color: #000;
+      background-color: #c60000;
+      color: #fff;
     }
   }
 
   ul button {
-    background-color: #464646;
+    background-color: #fff;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: #c60000;
     cursor: pointer;
     font-size: 18px;
     margin: 0.5em;
@@ -91,13 +91,13 @@
   @media (prefers-reduced-motion: no-preference) {
     ul button:focus,
     ul button:hover {
-      box-shadow: inset 6.5em 0 0 0 #ffff00;
+      box-shadow: inset 6.5em 0 0 0 #c60000;
     }
   }
 
   ul button:hover,
   ul button:focus {
-    color: #000;
+    color: #fff;
   }
 
   @media (min-width: 600px) {
