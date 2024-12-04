@@ -40,10 +40,6 @@
 </ul>
 
 <style>
-    @font-face {
-            font-family: "SuperWoobly";
-            src: url(/fonts/SuperWoobly-8MJlz.ttf);
-    }
 
   ul {
     backdrop-filter: blur(4px);
@@ -71,7 +67,7 @@
   @media (prefers-reduced-motion) {
     ul li button:focus,
     ul li button:hover {
-      box-shadow: 2px 2px 2px #989802;
+      box-shadow: 2px 2px 2px #c60000;
       background-color: #c60000;
       color: #fff;
     }
@@ -95,7 +91,7 @@
     width: max-content;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion:no-preference) {
     ul button:focus,
     ul button:hover {
       box-shadow: inset 9em 0 0 0 #c60000;

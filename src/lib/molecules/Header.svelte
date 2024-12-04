@@ -10,11 +10,6 @@
 </header> 
 
 <style>
-        @font-face {
-            font-family: "SuperWoobly";
-            src: url(/fonts/SuperWoobly-8MJlz.ttf);
-        }
-
         header {
             align-items: center;
             background: #c60000;

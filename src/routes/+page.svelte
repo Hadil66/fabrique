@@ -143,6 +143,7 @@ on:scroll={handleScroll}>
 		display: block;
 		border-radius: 8px;
 		transition: transform 0.3s ease-in-out;
+		filter: grayscale(0.5);
 	}
 
 	figcaption {
