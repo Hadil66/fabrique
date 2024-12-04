@@ -1,12 +1,13 @@
 <script>
+	import { onMount } from 'svelte';
 
 </script>
 
-<header>
+<header bind:this={header} class="headie-one">
     <h1>
         qatar museums
     </h1>
-</header>
+</header> 
 
 <style>
         @font-face {
@@ -21,9 +22,13 @@
             flex-direction: column;
             height: 100vh;
             justify-content: center;
+            left: 0;
             position: fixed;
+            /* top: 0; */
             width: 100%;
+            z-index: 369;
         }
+
 
         h1 {
             color: #fff;

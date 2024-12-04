@@ -23,46 +23,49 @@ import { activeFilter } from "$lib/store";
 	import Filters from "$lib/molecules/Filters.svelte";
   
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
-  </script>
+	</script>
 
-  <Header />
+<Header />
 
 <div class="scroll-container"
 bind:this={scrollContainer}
-  on:scroll={handleScroll}>
-  <ul class="masonry">
+on:scroll={handleScroll}>
+<ul class="masonry">
 	{#each data.artObjects as art, index}
-	  <li
-		class="masonry-item"
-		class:hidden={$activeFilter !== "*" &&
+	<li
+	class="masonry-item"
+	class:hidden={$activeFilter !== "*" &&
 		  $activeFilter !== techniques[index % techniques.length]}
 		data-category={techniques[index % techniques.length]}
-	  >
+		>
 		<figure>
-		  <picture>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
+			<picture>
+				<source
+				srcset={"https://fdnd-agency.directus.app/assets/" +
 				art.image +
 				".avif"}
 			  type="image/avif"
-			/>
-			<source
+			  />
+			  <source
 			  srcset={"https://fdnd-agency.directus.app/assets/" +
 				art.image +
 				".webp"}
 			  type="image/webp"
-			/>
-			<img
+			  />
+			  <img
 			  src={"https://fdnd-agency.directus.app/assets/" + art.image}
 			  alt={art.title}
 			  height={art.height}
 			  width={art.width}
 			  loading="lazy"
-			/>
-		  </picture>
-		  <figcaption>
-			<h2>{art.title}</h2>
-		  </figcaption>
+			  />
+			</picture>
+			
+			
+			<figcaption>
+				<h2>{art.title}</h2>
+				<img src="/bloody-hands.png">
+			</figcaption>
 		</figure>
 	  </li>
 	{/each}
@@ -103,6 +106,7 @@ bind:this={scrollContainer}
 	}
 
 	.masonry-item.hidden {
+		/* background-image: url(/bloody-hands.png); */
 		filter: opacity(0.3);
 		pointer-events: none;
 		transition: 1s;
@@ -120,7 +124,12 @@ bind:this={scrollContainer}
 
 	.masonry-item:hover figcaption,
 	.masonry-item:focus figcaption {
-		opacity: 1;
+		opacity: 0.5;
+	}
+
+	
+	figcaption img {
+		scale: 0.7;
 	}
 
 	figure {
@@ -142,7 +151,7 @@ bind:this={scrollContainer}
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.6);
+		background-color: white;
 		color: white;
 		display: flex;
 		flex-direction: column;

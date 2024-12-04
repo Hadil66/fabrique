@@ -40,6 +40,11 @@
 </ul>
 
 <style>
+    @font-face {
+            font-family: "SuperWoobly";
+            src: url(/fonts/SuperWoobly-8MJlz.ttf);
+    }
+
   ul {
     backdrop-filter: blur(4px);
     bottom: 6em;
@@ -53,16 +58,16 @@
     width: 25em;
     z-index: 32;
   }
-
+  
   ::-webkit-scrollbar {
     display: none;
   }
-
+  
   ul li {
     cursor: pointer;
     list-style-type: "";
   }
-
+  
   @media (prefers-reduced-motion) {
     ul li button:focus,
     ul li button:hover {
@@ -71,7 +76,7 @@
       color: #fff;
     }
   }
-
+  
   ul button {
     background-color: #fff;
     border: none;
@@ -79,6 +84,7 @@
     box-shadow: 2px 2px 2px #333;
     color: #c60000;
     cursor: pointer;
+    font-family: "SuperWoobly";
     font-size: 18px;
     margin: 0.5em;
     padding: 0.5em;
@@ -92,7 +98,7 @@
   @media (prefers-reduced-motion: no-preference) {
     ul button:focus,
     ul button:hover {
-      box-shadow: inset 6.5em 0 0 0 #c60000;
+      box-shadow: inset 9em 0 0 0 #c60000;
     }
   }
 
