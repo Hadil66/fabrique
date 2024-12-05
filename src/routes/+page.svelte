@@ -1,6 +1,5 @@
 <script>
 	export let data;
-	console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
 
 	import Header from '$lib/molecules/Header.svelte';
 
@@ -82,7 +81,7 @@ on:scroll={handleScroll}>
 		display: flex;
 		overflow-x: auto;
 		padding: 1rem;
-		margin: 2.5rem;
+		margin: 100vh 2.5rem;
 		scroll-snap-type: x mandatory;
 	}
 
