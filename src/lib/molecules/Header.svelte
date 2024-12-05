@@ -56,6 +56,12 @@
 		Qatar Museums
 	</h1>
 </header>
+<div class="drip">
+    <div id="ric-flair-drip"></div>
+    <div id="drip-too-hard"></div>
+    <div id="drip-or-drown"></div>
+</div>
+
 
 <style>
 	header {
