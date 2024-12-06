@@ -19,11 +19,6 @@
 
 <style>
 
-    
-/* import font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap');
-
-
 .search {
     width: 100vw;
     position: relative;
@@ -53,7 +48,7 @@
     flex: 1; 
     border: none; 
     padding: 0.5em 0.5em;
-    font-family: 'Roboto condensed', sans-serif;
+    font-family: "SuperWoobly";
     font-size: 24px;
     background: transparent;
 }

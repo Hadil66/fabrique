@@ -1,12 +1,11 @@
 <script>
 	export let data;
-	console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
+
+	import Header from '$lib/molecules/Header.svelte';
 
 	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
 	let filterText = '';
     
-	import Navbar from '$lib/Navbar.svelte';
-
 	import Searchbar from '$lib/molecules/searchbar.svelte';
 
 	let scrollContainer; // variable scroll container. 
@@ -23,45 +22,49 @@ import { activeFilter } from "$lib/store";
 	import Filters from "$lib/molecules/Filters.svelte";
   
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
-  </script>
+	</script>
 
-<Navbar />
+<Header />
+
 <div class="scroll-container"
 bind:this={scrollContainer}
-  on:scroll={handleScroll}>
-  <ul class="masonry">
+on:scroll={handleScroll}>
+<ul class="masonry">
 	{#each data.artObjects as art, index}
-	  <li
-		class="masonry-item"
-		class:hidden={$activeFilter !== "*" &&
+	<li
+	class="masonry-item"
+	class:hidden={$activeFilter !== "*" &&
 		  $activeFilter !== techniques[index % techniques.length]}
 		data-category={techniques[index % techniques.length]}
-	  >
+		>
 		<figure>
-		  <picture>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
+			<picture>
+				<source
+				srcset={"https://fdnd-agency.directus.app/assets/" +
 				art.image +
 				".avif"}
 			  type="image/avif"
-			/>
-			<source
+			  />
+			  <source
 			  srcset={"https://fdnd-agency.directus.app/assets/" +
 				art.image +
 				".webp"}
 			  type="image/webp"
-			/>
-			<img
+			  />
+			  <img
 			  src={"https://fdnd-agency.directus.app/assets/" + art.image}
 			  alt={art.title}
 			  height={art.height}
 			  width={art.width}
 			  loading="lazy"
-			/>
-		  </picture>
-		  <figcaption>
-			<h2>{art.title}</h2>
-		  </figcaption>
+			  />
+			</picture>
+			
+			
+			<figcaption>
+				<h2>{art.title}</h2>
+				<img src="/bloody-hands.png">
+			</figcaption>
 		</figure>
 	  </li>
 	{/each}
@@ -78,7 +81,7 @@ bind:this={scrollContainer}
 		display: flex;
 		overflow-x: auto;
 		padding: 1rem;
-		margin: 2.5rem;
+		margin: 100vh 2.5rem;
 		scroll-snap-type: x mandatory;
 	}
 
@@ -102,6 +105,7 @@ bind:this={scrollContainer}
 	}
 
 	.masonry-item.hidden {
+		/* background-image: url(/bloody-hands.png); */
 		filter: opacity(0.3);
 		pointer-events: none;
 		transition: 1s;
@@ -119,7 +123,12 @@ bind:this={scrollContainer}
 
 	.masonry-item:hover figcaption,
 	.masonry-item:focus figcaption {
-		opacity: 1;
+		opacity: 0.5;
+	}
+
+	
+	figcaption img {
+		scale: 0.7;
 	}
 
 	figure {
@@ -133,6 +142,7 @@ bind:this={scrollContainer}
 		display: block;
 		border-radius: 8px;
 		transition: transform 0.3s ease-in-out;
+		filter: grayscale(0.5);
 	}
 
 	figcaption {
@@ -141,7 +151,7 @@ bind:this={scrollContainer}
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.6);
+		background-color: white;
 		color: white;
 		display: flex;
 		flex-direction: column;
