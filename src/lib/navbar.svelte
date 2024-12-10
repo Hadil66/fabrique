@@ -15,37 +15,6 @@
             <p class="title">  <span>متاحف قطر</span> Qatar Museums</p>  
         </div>  
     </a>
-    <ul>
-        <li>
-            <span>قصص</span>
-            <a href="#"> STORIES</a>
-        </li>
-        <li>
-            <span>ما هو الجديد</span> 
-            <a href="#"> WHAT'S ON</a>
-        </li>
-        <li>
-            <span>المجموعة</span> 
-            <a href="#"> COLLECTION</a>
-        </li>
-        <li>
-            <span>زيارة</span> 
-            <a href="#">VISIT</a>
-        </li>
-        <li>
-            <a  class="ticket-nav-item" href="#"> TICKETS</a>
-           </li>
-        <li>
-            <a href="#"> MEMBERS</a>
-           
-        </li>
-        <li>
-            <a href="#">VENUES</a>
-            
-        </li>
-        
-    </ul>
-    <Dropdown />    
 </nav>
 
 
@@ -70,10 +39,7 @@ nav {
     top: 0;
 }
 
-a {
-    color:#000;
-    text-decoration: none;
-}
+
 .title {
     margin-left: 0.5rem;    
     white-space: nowrap;  
@@ -93,78 +59,5 @@ a {
     width: 	100%;
 }
 
-/* Ul */
-nav ul {
-    list-style: none;
-    display: flex; 
-    gap: 20px;
-    margin-right: 1rem;
-    justify-content: flex-end;
-    width: 100%;
-}
 
-nav ul li {
-    white-space: nowrap; 
-    display: block; 
-}
-
-nav ul li:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.ticket-nav-item {
-    background-color: yellow;
-    padding: 0.4rem;
-    font-size: 16px;
-    border: #000 solid 1px;
-}
-
-.ticket-nav-item:hover {
-    color: #fff;
-    background-color: black;
-    cursor: pointer;
-}
-
-span {
-    display: block;
-    text-align: center;
-    font-size: 20px;
-}
-
-
-/* MEDIA QUERY */
-
-@media (max-width: 450px) {
-
-.ticket-nav-item {
-        display: none; 
-      
-    }
-}
-
-@media (max-width: 990px) {
-    nav ul {
-        display: flex; 
-    }
-
-    /* Hide all li items except .ticket-nav-item */
-    nav ul li:not(.ticket-nav-item) {
-        display: none;
-    }
-}
-
-@media (min-width: 1020px) {
-    nav ul {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        justify-content: flex-end;
-        width: 100%;
-    }
-
-    nav ul li {
-        display: block; /* Ensure all li items are visible on desktop */
-    }
-}
 </style>
