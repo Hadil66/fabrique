@@ -63,7 +63,7 @@ nav {
     line-height: 20px;
     border-bottom: 1px solid #000;
     width: 100%;
-    height: 4rem;
+    height: 3.7em;
     position: fixed;
     z-index: 33;
     background: white;

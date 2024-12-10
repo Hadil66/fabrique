@@ -60,7 +60,6 @@ bind:this={scrollContainer}
 			/>
 		  </picture>
 		  <figcaption>
-			<h2>{art.title}</h2>
 		  </figcaption>
 		</figure>
 	  </li>
@@ -77,14 +76,12 @@ bind:this={scrollContainer}
 	.scroll-container {
 		display: flex;
 		overflow-x: auto;
-		padding: 1rem;
-		margin: 2.5rem;
 		scroll-snap-type: x mandatory;
 	}
 
 	.masonry {
 		column-count: 1;
-		column-gap: 1rem;
+		column-gap: 0;
 		list-style: none;
 		padding: 0;
 	}
@@ -93,9 +90,7 @@ bind:this={scrollContainer}
 		break-inside: avoid;
 		display: block;
 		background-color: #fff;
-		border-radius: 8px;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		margin-bottom: 1rem;
 		position: relative;
 		overflow: hidden;
 		transition: opacity 0.3s;
@@ -117,21 +112,17 @@ bind:this={scrollContainer}
 		transform: scale(1.1);
 	}
 
-	.masonry-item:hover figcaption,
-	.masonry-item:focus figcaption {
-		opacity: 1;
-	}
-
 	figure {
 		margin: 0;
 		position: relative;
 	}
 
 	img {
-		width: 100%;
-		height: auto;
+		/* width: 100%; */
+		/* height: auto; */
+		width: 22em;
+		height: 28em;
 		display: block;
-		border-radius: 8px;
 		transition: transform 0.3s ease-in-out;
 	}
 
@@ -139,23 +130,17 @@ bind:this={scrollContainer}
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100%;
+		/* width: 100%; */
+		/* height: 100%; */
+		width: 22em;
+		height: 28em;
 		background-color: rgba(0, 0, 0, 0.6);
 		color: white;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		opacity: 0;
 		transition: opacity 0.3s ease-in-out;
-	}
-
-	h2 {
-		font-size: 16px;
-		margin: 0.5rem 0;
-		text-align: center;
-		-webkit-text-stroke: 0.2px #ffff00;
 	}
 
 	/* Responsiee layout */
@@ -167,7 +152,7 @@ bind:this={scrollContainer}
 
 	@media (min-width: 900px) {
 		.masonry {
-			column-count: 3;
+			column-count: 4;
 		}
 		h2 {
 			font-size: 1.5rem;

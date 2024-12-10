@@ -1,13 +1,10 @@
 :root {
     /* colors */
-    --default-text-color-dark:#000;
-    --default-text-color-light:#fff;
-    --body-background-color:#fff;
-    --navbar-background-color:#fff;
-    --navbar-ticket-color:#FAFF1E;
-    --nav-bg: #ffff00;
-    --filter-background-color:#464646;
-    --filter-background-color-hover:#7d7d7d;  
+    --rose: #fe0879ff;
+    --rose-pink: #ff78dfff;
+    --gold: #fed715ff;
+    --persian-blue: #0037b3ff;
+    --argentinian-blue: #70baffff;
 
     /* font */
     
