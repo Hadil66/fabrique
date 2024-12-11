@@ -17,8 +17,21 @@
     --h3-font:22px;
 }
 
+@font-face {
+    font-family: "PopArt";
+    src: url(PopArt-Regular.ttf);
+}
 
 * {
     box-sizing: border-box;
+    font-family: "PopArt";
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+
 

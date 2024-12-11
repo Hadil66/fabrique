@@ -1,5 +1,4 @@
 <script>
-    import Dropdown from '$lib/Dropdown.svelte'
 
 	let showMenu = false;
 	function toggleMenu() {
@@ -8,27 +7,22 @@
 
 </script>
 
-<nav>
+<header>
     <a href="#">
-        <div class="logo-container">
-            <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums">
-            <p class="title">  <span>متاحف قطر</span> Qatar Museums</p>  
-        </div>  
+            <h1> qatar museums</h1>
     </a>
-</nav>
+</header>
 
 
 <style>
-
-   /* NAV BAR */
-nav {
+   a {
+    text-decoration: none;
+ }
+ 
+header {
     display: flex;
-    align-items: center; /* Center the items vertically */
-    justify-content: space-between;
-    font-family: 'DIN Next', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
+    align-items: center; 
+    justify-content: center;
     line-height: 20px;
     border-bottom: 1px solid #000;
     width: 100%;
@@ -39,25 +33,10 @@ nav {
     top: 0;
 }
 
-
-.title {
+h1 {
     margin-left: 0.5rem;    
-    white-space: nowrap;  
+    font-size: 3em;  
+    font-weight: 100;
+    color: salmon;
 }
-/* LOGO */
-
-.logo-qatar {
-    object-fit: cover;
-    width:7rem ;
-    scale: 0.8;
-    background-color: transparent;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    width: 	100%;
-}
-
-
 </style>

@@ -91,7 +91,7 @@
   @media (prefers-reduced-motion: no-preference) {
     ul button:focus,
     ul button:hover {
-      box-shadow: inset 6.5em 0 0 0 #ffff00;
+      box-shadow: inset 8.5em 0 0 0 #ffff00;
     }
   }
 

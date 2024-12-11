@@ -80,7 +80,7 @@ bind:this={scrollContainer}
 	}
 
 	.masonry {
-		column-count: 1;
+		column-count: 2;
 		column-gap: 0;
 		list-style: none;
 		padding: 0;
@@ -107,19 +107,13 @@ bind:this={scrollContainer}
 		outline-offset: 3px;
 	}
 
-	.masonry-item:hover img,
-	.masonry-item:focus img {
-		transform: scale(1.1);
-	}
-
 	figure {
 		margin: 0;
 		position: relative;
 	}
 
 	img {
-		/* width: 100%; */
-		/* height: auto; */
+
 		width: 22em;
 		height: 28em;
 		display: block;
@@ -130,17 +124,18 @@ bind:this={scrollContainer}
 		position: absolute;
 		top: 0;
 		left: 0;
-		/* width: 100%; */
-		/* height: 100%; */
 		width: 22em;
 		height: 28em;
-		background-color: rgba(0, 0, 0, 0.6);
 		color: white;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		transition: opacity 0.3s ease-in-out;
+	}
+
+	figcaption:nth-of-type(4n){
+		background-color: var(--rose);
 	}
 
 	/* Responsiee layout */

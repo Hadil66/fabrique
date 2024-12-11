@@ -19,9 +19,6 @@
 
 <style>
 
-    
-/* import font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap');
 
 
 .search {
@@ -53,7 +50,6 @@
     flex: 1; 
     border: none; 
     padding: 0.5em 0.5em;
-    font-family: 'Roboto condensed', sans-serif;
     font-size: 24px;
     background: transparent;
 }
@@ -62,7 +58,6 @@
 .searchTerm::placeholder {
     color: #000000;
     text-transform: uppercase;
-    font-weight: 500; 
     letter-spacing: 0.1rem;
 }
 
