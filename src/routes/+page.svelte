@@ -23,12 +23,25 @@ import { activeFilter } from "$lib/store";
 	import Filters from "$lib/molecules/Filters.svelte";
   
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
+
+// To track the currently opened popup
+let activePopup = null;
+
+function openPopup(index) {
+  activePopup = index; // Set the currently active popup
+}
+
+function closePopup() {
+  activePopup = null; // Clear the active popup
+}
+
   </script>
 
 <Navbar />
 <div class="scroll-container"
 bind:this={scrollContainer}
   on:scroll={handleScroll}>
+ 
   <ul class="masonry">
 	{#each data.artObjects as art, index}
 	  <li
@@ -37,7 +50,8 @@ bind:this={scrollContainer}
 		  $activeFilter !== techniques[index % techniques.length]}
 		data-category={techniques[index % techniques.length]}
 	  >
-		<figure>
+	
+		<figure  on:click={() => openPopup(index)}>
 		  <picture>
 			<source
 			  srcset={"https://fdnd-agency.directus.app/assets/" +
@@ -63,6 +77,17 @@ bind:this={scrollContainer}
 			<h2>{art.title}</h2>
 		  </figcaption>
 		</figure>
+		{#if activePopup === index}
+		<div class="popup-overlay" on:click={closePopup}>
+		  <div class="expanded-content">
+			<div>
+			  <img src={"https://fdnd-agency.directus.app/assets/" + art.image} alt={art.title} />
+			</div>
+			<h2>{art.title}</h2>
+			<p>Detailed information</p>
+		  </div>
+		</div>
+	  {/if}
 	  </li>
 	{/each}
   </ul>
@@ -80,6 +105,7 @@ bind:this={scrollContainer}
 		padding: 1rem;
 		margin: 2.5rem;
 		scroll-snap-type: x mandatory;
+	
 	}
 
 	.masonry {
@@ -101,6 +127,7 @@ bind:this={scrollContainer}
 		transition: opacity 0.3s;
 	}
 
+	
 	.masonry-item.hidden {
 		filter: opacity(0.3);
 		pointer-events: none;
@@ -157,6 +184,40 @@ bind:this={scrollContainer}
 		text-align: center;
 		-webkit-text-stroke: 0.2px #ffff00;
 	}
+
+
+	.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+	.expanded-content {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 8px;
+    overflow: auto;
+    z-index: 10;
+  }
+  .expanded-content img {
+    max-width:  100vh;
+    max-height: 90vh;
+    margin-bottom: 1rem;
+	object-fit: cover;
+  }
 
 	/* Responsiee layout */
 	@media (min-width: 600px) {
