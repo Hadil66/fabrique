@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores';
-	import Nav from '$lib/navbar.svelte';
 
 	console.log($page.status);
 </script>

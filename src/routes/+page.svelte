@@ -1,20 +1,16 @@
 <script>
 	export let data;
-	console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
+	console.log(data); 
 
-	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
+	import Search from '$lib/Search.svelte'; 
 	let filterText = '';
     
-	import Navbar from '$lib/Navbar.svelte';
-
 	import Searchbar from '$lib/molecules/searchbar.svelte';
 
-	let scrollContainer; // variable scroll container. 
+	let scrollContainer; 
 
 function handleScroll() {
-  // Als de gebruiker halverwege de scrollcontainer is gescrolld...
   if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) { 
-    // ... scroll dan terug naar het begin van de tweede helft van de inhoud.
     scrollContainer.scrollLeft -= scrollContainer.scrollWidth / 2;
   }
 }
@@ -25,7 +21,11 @@ import { activeFilter } from "$lib/store";
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
   </script>
 
-<Navbar />
+
+<header>
+    <h1> qatar museums</h1>
+</header>
+
 <div class="scroll-container"
 bind:this={scrollContainer}
   on:scroll={handleScroll}>
@@ -38,29 +38,7 @@ bind:this={scrollContainer}
 		data-category={techniques[index % techniques.length]}
 	  >
 		<figure>
-		  <picture>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
-				art.image +
-				".avif"}
-			  type="image/avif"
-			/>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
-				art.image +
-				".webp"}
-			  type="image/webp"
-			/>
-			<img
-			  src={"https://fdnd-agency.directus.app/assets/" + art.image}
-			  alt={art.title}
-			  height={art.height}
-			  width={art.width}
-			  loading="lazy"
-			/>
-		  </picture>
-		  <figcaption class="caption-{index % 5}">
-		  </figcaption>
+		  <figcaption class="caption-{index % 5}"></figcaption>
 		</figure>
 	  </li>
 	{/each}
@@ -73,6 +51,27 @@ bind:this={scrollContainer}
 </div>
 
 <style>
+	header {
+		display: flex;
+		align-items: center; 
+		justify-content: center;
+		line-height: 20px;
+		border-bottom: 1px solid var(--black);
+		width: 100%;
+		height: 3.7em;
+		position: fixed;
+		z-index: 33;
+		background: var(--argentinian-blue);
+		top: 0;
+	}
+
+	h1 {
+		margin-left: 0.5rem;    
+		font-size: 3em;  
+		font-weight: 100;
+		color: var(--black);
+	}
+
 	.scroll-container {
 		display: flex;
 		overflow-x: auto;
@@ -96,11 +95,45 @@ bind:this={scrollContainer}
 		transition: opacity 0.3s;
 	}
 
-	.caption-0 { background-color: var(--rose); }
-	.caption-1 { background-color: var(--rose-pink); }
-	.caption-2 { background-color: var(--gold); }
-	.caption-3 { background-color: var(--persian-blue); }
-	.caption-4 { background-color: var(--argentinian-blue); }
+	.caption-0 { 		
+		background-image: url(/mona.jpg);
+		background-color: var(--rose);
+		background-blend-mode: multiply;
+		background-size: cover; 
+		background-position: center;
+}
+
+	.caption-1 { 		
+		background-image: url(/mona.jpg);
+		background-color: var(--rose-pink); 
+		background-blend-mode: multiply; 
+		background-size: cover; 
+		background-position: center;
+	}
+
+	.caption-2 { 		
+		background-image: url(/mona.jpg);
+		background-color: var(--gold); 
+		background-blend-mode: multiply; 
+		background-size: cover; 
+		background-position: center;
+	}
+
+	.caption-3 { 		
+		background-image: url(/mona.jpg);
+		background-color: var(--persian-blue); 
+		background-blend-mode: multiply; 
+		background-size: cover; 
+		background-position: center;
+	}
+
+	.caption-4 { 		
+		background-image: url(/mona.jpg);
+		background-color: var(--argentinian-blue);
+		background-blend-mode: multiply; 
+		background-size: cover; 
+		background-position: center;
+	}
 
 
 	.masonry-item.hidden {
@@ -119,18 +152,7 @@ bind:this={scrollContainer}
 		position: relative;
 	}
 
-	img {
-
-		width: 22em;
-		height: 28em;
-		display: block;
-		transition: transform 0.3s ease-in-out;
-	}
-
 	figcaption {
-		position: absolute;
-		top: 0;
-		left: 0;
 		width: 22em;
 		height: 28em;
 		display: flex;
@@ -147,7 +169,7 @@ bind:this={scrollContainer}
 	/* Responsiee layout */
 	@media (min-width: 600px) {
 		.masonry {
-			column-count: 2;
+			column-count: 1;
 		}
 	}
 
