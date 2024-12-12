@@ -23,18 +23,40 @@ import { activeFilter } from "$lib/store";
 	import Filters from "$lib/molecules/Filters.svelte";
   
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
+	let activePopup = null;
 
-// To track the currently opened popup
-let activePopup = null;
-
+// Function to open the popup
 function openPopup(index) {
-  activePopup = index; // Set the currently active popup
+  activePopup = index;
 }
 
+// Function to close the popup
 function closePopup() {
-  activePopup = null; // Clear the active popup
+  activePopup = null;
 }
 
+// To add event listeners for figures
+function addEventListeners() {
+  const figures = document.querySelectorAll('figure');
+  figures.forEach((figure, index) => {
+	figure.addEventListener('click', () => openPopup(index));
+  });
+}
+
+
+
+    // Step 1: Start the view transition when the popup opens
+    const transition = document.startViewTransition(() => {
+      activePopup = index; // Set the active popup after transition starts
+    });
+
+
+
+// Call addEventListeners on mount
+import { onMount } from 'svelte';
+onMount(() => {
+  addEventListeners();
+});
   </script>
 
 <Navbar />
@@ -51,7 +73,7 @@ bind:this={scrollContainer}
 		data-category={techniques[index % techniques.length]}
 	  >
 	
-		<figure  on:click={() => openPopup(index)}>
+		<figure>
 		  <picture>
 			<source
 			  srcset={"https://fdnd-agency.directus.app/assets/" +
@@ -193,10 +215,11 @@ bind:this={scrollContainer}
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 10;
+    z-index: 80;
     display: flex;
     justify-content: center;
     align-items: center;
+	/* animation: fadeIn 0.5s forwards; */
   }
 
   /* Fade-in transition using keyframes for the popup overlay */
@@ -209,18 +232,31 @@ bind:this={scrollContainer}
   }
 }
 
-	.expanded-content {
+/* Expanded content with scaling and opacity animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.expanded-content {
     position: fixed;
     top: 10%;
     left: 10%;
-    width: 80%;
+    width: 75%;
     height: 80%;
     background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 2rem;
     border-radius: 8px;
     overflow: auto;
-    z-index: 10;
+    z-index: 90;
+	animation: fadeIn 0.5s ease forwards, scaleUp 0.5s ease forwards;
   }
   .expanded-content img {
     max-width:  100vh;
