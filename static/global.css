@@ -1,14 +1,14 @@
 :root {
     /* colors */
 
-    --rose: #fe0879ff;
-    --rose-pink: #ff78dfff;
-    --gold: #fed715ff;
-    --persian-blue: #0037b3ff;
-    --argentinian-blue: #70baffff;
+    --rose: color(display-p3 0.996078 0.031373 0.474510 / 1.000000);
+    --rose-pink: color(display-p3 1.000000 0.470588 0.874510 / 1.000000);
+    --gold: color(display-p3 0.996078 0.843137 0.082353 / 1.000000);
+    --persian-blue: color(display-p3 0.996078 0.843137 0.082353 / 1.000000);
+    --argentinian-blue: color(display-p3 0.439216 0.729412 1.000000 / 1.000000);
 
-    --white: #fff;
-    --black: #000;
+    --white: color(display-p3 1.000000 1.000000 1.000000 / 1.000000);
+    --black: color(display-p3 0.000000 0.000000 0.000000 / 1.000000);
 
 
     --h1-font:34px;
