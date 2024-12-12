@@ -69,6 +69,7 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+	margin: 5vh 0 0 0;
   }
 
   .masonry {
