@@ -68,7 +68,7 @@
     ul li button:hover {
       box-shadow: 2px 2px 2px #989802;
       background-color: #ffff00;
-      color: #000;
+      color: var(--black);
     }
   }
 
@@ -76,7 +76,7 @@
     background-color: #464646;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: var(--white);
     cursor: pointer;
     font-size: 18px;
     margin: 0.5em;
@@ -88,16 +88,58 @@
     width: max-content;
   }
 
+/* DIT GAA NIET SAMEN MET DE HOVER STYLING */
+/*   
+  ul li:nth-of-type(1) button {
+    box-shadow: 2px 2px 2px var(--rose);
+  }
+
+  ul li:nth-of-type(2) button {
+    box-shadow: 2px 2px 2px var(--rose-pink);
+  }
+
+  ul li:nth-of-type(3) button {
+    box-shadow: 2px 2px 2px var(--gold);
+  }
+
+  ul li:nth-of-type(4) button {
+    box-shadow: 2px 2px 2px var(--persian-blue);
+  }
+
+  ul li:nth-of-type(5) button {
+    box-shadow: 2px 2px 2px var(--argentinian-blue);
+  } */
+
   @media (prefers-reduced-motion: no-preference) {
-    ul button:focus,
-    ul button:hover {
-      box-shadow: inset 8.5em 0 0 0 #ffff00;
+    ul li:nth-of-type(1) button:focus,
+    ul li:nth-of-type(1) button:hover {
+      box-shadow: inset 9em 0 0 0 var(--rose);
+    }  
+    
+    ul li:nth-of-type(2) button:focus,
+    ul li:nth-of-type(2) button:hover {
+      box-shadow: inset 8.5em 0 0 0 var(--rose-pink);
+    }  
+    
+    ul li:nth-of-type(3) button:focus,
+    ul li:nth-of-type(3) button:hover {
+      box-shadow: inset 8.5em 0 0 0 var(--gold);
+    }  
+    
+    ul li:nth-of-type(4) button:focus,
+    ul li:nth-of-type(4) button:hover {
+      box-shadow: inset 8.5em 0 0 0 var(--persian-blue);
+      color: var(--white);
+    }
+    ul li:nth-of-type(5) button:focus,
+    ul li:nth-of-type(5) button:hover {
+      box-shadow: inset 8.5em 0 0 0 var(--argentinian-blue);
     }
   }
 
   ul button:hover,
   ul button:focus {
-    color: #000;
+    color: var(--black);
   }
 
   @media (min-width: 600px) {

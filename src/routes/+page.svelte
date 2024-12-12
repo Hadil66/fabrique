@@ -59,7 +59,7 @@ bind:this={scrollContainer}
 			  loading="lazy"
 			/>
 		  </picture>
-		  <figcaption>
+		  <figcaption class="caption-{index % 5}">
 		  </figcaption>
 		</figure>
 	  </li>
@@ -89,12 +89,19 @@ bind:this={scrollContainer}
 	.masonry-item {
 		break-inside: avoid;
 		display: block;
-		background-color: #fff;
+		background-color: var(--white);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		position: relative;
 		overflow: hidden;
 		transition: opacity 0.3s;
 	}
+
+	.caption-0 { background-color: var(--rose); }
+	.caption-1 { background-color: var(--rose-pink); }
+	.caption-2 { background-color: var(--gold); }
+	.caption-3 { background-color: var(--persian-blue); }
+	.caption-4 { background-color: var(--argentinian-blue); }
+
 
 	.masonry-item.hidden {
 		filter: opacity(0.3);
@@ -103,7 +110,7 @@ bind:this={scrollContainer}
 	}
 
 	.masonry-item:focus {
-		outline: 2px solid #020202;
+		outline: 2px solid var(--black);
 		outline-offset: 3px;
 	}
 
@@ -126,7 +133,6 @@ bind:this={scrollContainer}
 		left: 0;
 		width: 22em;
 		height: 28em;
-		color: white;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

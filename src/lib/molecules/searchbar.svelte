@@ -18,18 +18,15 @@
 </div>
 
 <style>
-
-
-
 .search {
     width: 100vw;
     position: relative;
     display: flex;
     align-items: center; 
-    border: 2px solid rgb(14, 14, 14); 
+    border: 2px solid var(--black); 
     border-radius: 4px; 
     overflow: hidden;
-    background: white;
+    background: var(--argentinian-blue);
 }
 
 .search::after {
@@ -39,12 +36,8 @@
     left: 0.5rem;
     width: 93%;
     height: 1px; 
-    background-color: black;
+    background-color: var(--black);
 }
-/* .search.loading::after {
-    animation: loadingAnimation 1s infinite ease-in-out;
-} */
-
 
 .searchTerm {
     flex: 1; 
@@ -56,7 +49,7 @@
 
 /* text styling */
 .searchTerm::placeholder {
-    color: #000000;
+    color: var(--black);
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
