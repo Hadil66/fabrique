@@ -14,6 +14,10 @@
     --h1-font:34px;
     --h2-font:2px;
     --h3-font:22px;
+
+
+    --dot-size: 5px; 
+    --dot-space: 10px; 
 }
 
 @font-face {

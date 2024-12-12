@@ -19,7 +19,7 @@
 </script>
 
 <header>
-  <h1>qatar museums</h1>
+  <a href="/page2"><h1>qatar museums</h1></a>
 </header>
 
 <div class="scroll-container">
@@ -45,6 +45,13 @@
 
 <style>
   header {
+	background:repeating-linear-gradient(
+		45deg,
+		var(--argentinian-blue),
+		var(--argentinian-blue) 10px,
+		var(--rose)10px,
+		var(--rose) 20px
+		);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,9 +60,16 @@
     width: 100%;
     height: 3.7em;
     position: fixed;
-    z-index: 33;
-    background: var(--argentinian-blue);
     top: 0;
+    z-index: 33;
+  }
+
+	a {
+		text-decoration: none;
+	}
+
+  header a:hover h1 {
+	font-size: 3.2em;
   }
 
   h1 {
@@ -63,31 +77,26 @@
     font-size: 3em;
     font-weight: 100;
     color: var(--black);
+    transition: 0.3s ease-in;
   }
 
   .scroll-container {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-	margin: 5vh 0 0 0;
+	margin: -4vh 0 0 0;
   }
 
   .masonry {
+	background: var(--rose);
+	background-image: radial-gradient(#ff78dfff 40%, transparent 0);
+	background-size: 35px 35px;
     column-count: 2;
     column-gap: 0;
     list-style: none;
     padding: 0;
   }
 
-  .masonry-item {
-    break-inside: avoid;
-    display: block;
-    background-color: var(--white);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    transition: opacity 0.3s;
-  }
   .caption-0,
   .caption-1,
   .caption-2,
@@ -121,9 +130,10 @@
 
   /* DIT AANPASSEN VOOR DE ACTIVE FILTER */
   .masonry-item.hidden {
-    filter: opacity(0.3);
+    filter: opacity(0);
     pointer-events: none;
     transition: 1s;
+	
   }
 
   figure {
