@@ -199,6 +199,16 @@ bind:this={scrollContainer}
     align-items: center;
   }
 
+  /* Fade-in transition using keyframes for the popup overlay */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 	.expanded-content {
     position: fixed;
     top: 10%;
