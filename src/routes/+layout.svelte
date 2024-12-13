@@ -1,61 +1,58 @@
 <script>
-    import { onNavigate} from '$app/navigation';
+    import { onNavigate } from '$app/navigation';
 
     onNavigate((navigation) => {
-     if (!document.startViewTransition) return
- 
-     return new Promise(resolve => {
-         document.startViewTransition(async () => {
-             resolve()
-             await navigation.complete
-         })
-     })
-    })
- </script>
+        if (!document.startViewTransition) return;
 
-<main>
+        return new Promise(resolve => {
+            document.startViewTransition(async () => {
+                resolve();
+                await navigation.complete;
+            });
+        });
+    });
+</script>
+
+<div>
     <h1>qatar museums</h1>
-
-</main>
+</div>
 
 <style>
-   main{
-       background-image: url('/popart.jpg');
+   div {
+       background-image: url(/popart.jpg);
        background-size: cover;
        background-repeat: no-repeat;
        background-position: center;
+       width: 100vw;
        height: 100vh;
-       width: 220vh;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%) scale(0);
+       border-radius: 50%;
+       overflow: hidden;
+       animation: grow 3s forwards;
    }
 
-   h1 {
+   @keyframes grow {
+       0% {
+           transform: translate(-50%, -50%) scale(0);
+       }
+       100% {
+           transform: translate(-50%, -50%) scale(1.5); 
+       }
+   }
+
+     h1 {
         position: absolute;
         top: 26%;
         left: 31%;
-        animation: pop 0.5s;
         transform: rotate(9deg);
         font-size: 5em;
         font-weight: 100;
         width: 6em;
         text-align: center;
-        -webkit-text-stroke: 1px var(--rose);
+        -webkit-text-stroke: 0.5px var(--rose);
+        z-index: 665;
    }
-
-   @keyframes pop {
-       0% {opacity: 0;}
-       100% {opacity: 1;}
-
-   }
-
-   :root::view-transition-old(root) {
-    main {
-        display: none;
-    }
-}
-
-:root::view-transition-new(root) {
-    main {
-        display: block;
-    }
-}
 </style>
