@@ -16,7 +16,7 @@
 <div>
     <h1>qatar museums</h1>
 </div>
-
+<slot />
 <style>
    div {
        background-image: url(/popart.jpg);
@@ -32,6 +32,7 @@
        border-radius: 50%;
        overflow: hidden;
        animation: grow 3s forwards;
+       display: none;
    }
 
    @keyframes grow {
