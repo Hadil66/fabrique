@@ -5,7 +5,6 @@
 	function toggleMenu() {
         showMenu = !showMenu;
       }
-
 </script>
 
 <nav>
@@ -43,9 +42,31 @@
             <a href="#">VENUES</a>
             
         </li>
+        <li>
+            <a href="/menu">
+                <svg
+xmlns="http://www.w3.org/2000/svg"
+width="30"
+height="30"
+viewBox="0 0 24 24"
+fill="none"
+>
+<g id="Menu / Menu_Duo_MD">
+  <path
+    id="Vector"
+    d="M5 15H19M5 9H19"
+    stroke="#000000"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</g>
+</svg>
+                menu</a>
+        </li>
         
     </ul>
-    <Dropdown />    
+      
 </nav>
 
 
@@ -66,7 +87,16 @@ nav {
     height: 4rem;
     position: fixed;
     z-index: 33;
-    background: white;
+    background: linear-gradient(
+  to bottom,
+  color(display-p3 0.913725 0.741176 0.447059 / 1),
+  color(display-p3 0.913725 0.741176 0.447059 / 1) 50%,
+  color(display-p3 0.913725 0.870588 0.752941 / 1) 50%,
+  color(display-p3 0.913725 0.870588 0.752941 / 1)
+);
+/* The rectangle in which to repeat. 
+   It can be fully wide in this case */
+background-size: 100% 20px;
     top: 0;
 }
 
@@ -139,7 +169,6 @@ span {
 
 .ticket-nav-item {
         display: none; 
-      
     }
 }
 

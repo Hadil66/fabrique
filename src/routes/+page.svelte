@@ -80,6 +80,13 @@ bind:this={scrollContainer}
 		padding: 1rem;
 		margin: 2.5rem;
 		scroll-snap-type: x mandatory;
+		background: repeating-radial-gradient(
+  				circle,
+ 				 color(display-p3 0.913725 0.741176 0.447059 / 1),
+ 				 color(display-p3 0.913725 0.741176 0.447059 / 1) 10px,
+ 				 color(display-p3 0.913725 0.870588 0.752941 / 1) 10px, 
+ 				 color(display-p3 0.913725 0.870588 0.752941 / 1) 20px
+				);
 	}
 
 	.masonry {
@@ -99,6 +106,7 @@ bind:this={scrollContainer}
 		position: relative;
 		overflow: hidden;
 		transition: opacity 0.3s;
+		border: .4em solid color(display-p3 0.901961 0.627451 0.152941 / 1);
 	}
 
 	.masonry-item.hidden {
@@ -141,7 +149,13 @@ bind:this={scrollContainer}
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.6);
+		background: repeating-linear-gradient(
+  45deg,
+  rgb(204, 128, 31, 0.5),
+  rgb(204, 128, 31, 0.5) 10px,
+  rgb(253, 180, 83, 0.5) 10px,
+  rgb(253, 180, 83, 0.5) 20px
+);
 		color: white;
 		display: flex;
 		flex-direction: column;
