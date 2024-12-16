@@ -6,6 +6,14 @@
     <div id="drip-too-hard"></div>
     <div id="drip-or-drown"></div>
   </div>
+
+  <svg viewBox="0 0 24 24" width="30" height="30">
+    <polygon class="droplet" points="3.3 4.06 0 13.72 1.86 18.5 7.93 21.59 14.11 18.92 15.79 13.72 12.33 3.7 7.89 0 3.3 4.06"></polygon>
+  </svg>
+  <svg viewBox="0 0 24 24" width="30" height="30">
+    <polygon class="droplet" points="3.3 4.06 0 13.72 1.86 18.5 7.93 21.59 14.11 18.92 15.79 13.72 12.33 3.7 7.89 0 3.3 4.06"></polygon>
+  </svg>
+
 </header>
 
 <style>
@@ -14,7 +22,7 @@
     animation: headie-one;
     animation-timeline: scroll();
     animation-range: 0vh 90vh;
-    background-color: #c60000;
+    background-color: lch(37 90.45 43.27);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,17 +35,18 @@
   h1 {
     color: white;
     font-family: "SuperWoobly";
+    margin: 0;
     text-align: center;
     text-transform: uppercase;
   }
 
   @keyframes headie-one {
-    from {
+    0% {
       background-position: 50% 0;
       height: 100vh;
       font-size: 2.5em;
     }
-    to {
+    100% {
       background-position: 50% 100%;
       height: 10vh;
       font-size: 1em;
@@ -61,7 +70,7 @@
   }
 
   #ric-flair-drip, #drip-too-hard, #drip-or-drown {
-    background: #c60000;
+    background: lch(37 90.45 43.27);
     position: absolute;
   }
 
@@ -78,5 +87,37 @@
   #drip-or-drown {
     top: 2em;
     left: 3.4em;
+  }
+
+  svg { 
+    animation: droplet 14s ease-in-out infinite;
+    position: absolute;
+    top: 3em;
+    right: -0.2em;
+  }
+   svg:nth-of-type(2) {
+    animation-delay: 0.5s;
+    position: absolute;
+    top: 3em;
+    right: 3.1em;
+  }
+
+  .droplet {
+    fill: lch(37 90.45 43.27);
+  }
+
+@keyframes droplet {
+    0% {
+      transform: translateY(0); 
+      opacity: 1;
+    }
+    40% {
+      transform: translateY(100vh); 
+      opacity: 0.5; 
+    }
+    100% {
+      transform: translateY(100vh); 
+      opacity: 0; 
+    }
   }
 </style>

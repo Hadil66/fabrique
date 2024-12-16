@@ -67,8 +67,8 @@
   @media (prefers-reduced-motion) {
     ul li button:focus,
     ul li button:hover {
-      box-shadow: 2px 2px 2px #c60000;
-      background-color: #c60000;
+      box-shadow: 2px 2px 2px lch(37 90.45 43.27);
+      background-color: lch(37 90.45 43.27);
       color: #fff;
     }
   }
@@ -78,7 +78,7 @@
     border: none;
     border-radius: 4px;
     box-shadow: 2px 0px 7px 4px #615959;
-    color: #c60000;
+    color: lch(37 90.45 43.27);
     cursor: pointer;
     font-family: "SuperWoobly";
     font-size: 18px;
@@ -94,7 +94,7 @@
   @media (prefers-reduced-motion:no-preference) {
     ul button:focus,
     ul button:hover {
-      box-shadow: inset 9em 0 0 0 #c60000;
+      box-shadow: inset 9em 0 0 0 lch(37 90.45 43.27);
     }
   }
 

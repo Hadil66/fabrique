@@ -2,12 +2,24 @@
 	export let data;
 
 	import Header from '$lib/molecules/Header.svelte';
-
 	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
-	let filterText = '';
-    
 	import Searchbar from '$lib/molecules/searchbar.svelte';
+	import { activeFilter } from "$lib/store";
+	import Filters from "$lib/molecules/Filters.svelte";
+	import { onMount } from 'svelte';
+	import Cursor from '$lib/Atoms/Icons/Cursor.svelte';
 
+    onMount( async () => { 
+		window.addEventListener('scroll', () => {
+		const playAudio = document.querySelector("audio");
+
+		if (window.scrollY > 10) {
+			playAudio.play();
+		}
+		});
+	});
+	
+	let filterText = '';
 	let scrollContainer; // variable scroll container. 
 
 function handleScroll() {
@@ -18,14 +30,13 @@ function handleScroll() {
   }
 }
   
-import { activeFilter } from "$lib/store";
-	import Filters from "$lib/molecules/Filters.svelte";
   
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
 	</script>
 
-<Header />
 
+<Header />
+<audio autoplay loop src="/AHS.mp3"></audio>
 <div class="scroll-container"
 bind:this={scrollContainer}
 on:scroll={handleScroll}>
@@ -69,6 +80,10 @@ on:scroll={handleScroll}>
 	  </li>
 	{/each}
   </ul>
+  <img class="twisty" src="/twisty.png">
+
+  <img class="twisty" src="/twisty.png">
+
 </div>
 
 <div>
@@ -80,16 +95,17 @@ on:scroll={handleScroll}>
 	.scroll-container {
 		display: flex;
 		overflow-x: auto;
-		padding: 1rem;
-		margin: 100vh 2.5rem;
+		padding: 0;
+		margin: 0;
 		scroll-snap-type: x mandatory;
 	}
 
 	.masonry {
 		column-count: 1;
-		column-gap: 1rem;
+		column-gap: 1em;
 		list-style: none;
-		padding: 0;
+		padding: 0 6em;
+		margin: 0;
 	}
 
 	.masonry-item {
@@ -102,10 +118,10 @@ on:scroll={handleScroll}>
 		position: relative;
 		overflow: hidden;
 		transition: opacity 0.3s;
+		z-index: 24;
 	}
 
 	.masonry-item.hidden {
-		/* background-image: url(/bloody-hands.png); */
 		filter: opacity(0.3);
 		pointer-events: none;
 		transition: 1s;
@@ -165,7 +181,38 @@ on:scroll={handleScroll}>
 		font-size: 16px;
 		margin: 0.5rem 0;
 		text-align: center;
-		-webkit-text-stroke: 0.2px #ffff00;
+		-webkit-text-stroke: 0.2px lch(37 90.45 43.27);
+	}
+
+	.twisty {
+		position: fixed;
+		opacity: 0.5;
+		width: 300px;
+	}
+
+	.twisty:nth-of-type(1) {
+		animation: jumpscare1 0.5s forwards;
+		animation-range: 0vh 100vh;
+		animation-timeline: scroll();
+		left: -5em;
+		top: 8em;
+	}
+
+	.twisty:nth-of-type(2) {
+		animation: jumpscare2 0.5s forwards;
+		animation-timeline: scroll();
+		top: 15em;
+		right: -6em;
+	}
+
+	@keyframes jumpscare1 {
+		0% { transform: translateX(-10vw); }
+		100% { transform: translateX(0); }
+	}
+
+	@keyframes jumpscare2 {
+		0% { transform: translateX(10vw); }
+		100% { transform: translateX(0); }
 	}
 
 	/* Responsiee layout */
