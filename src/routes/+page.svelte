@@ -52,8 +52,7 @@ bind:this={scrollContainer}
 			  type="image/webp"
 			/>
 			<div class="image-container">
-		
-
+				<div class="strikje"><img src="strikje.svg" width="130" height="130" alt=""></div>
 			<img
 			  src={"https://fdnd-agency.directus.app/assets/" + art.image}
 			  alt={art.title}
@@ -190,10 +189,10 @@ bind:this={scrollContainer}
 }
 
 .image-container::after {
-  top: -25px;
-  left: -25px;
-  width: calc(100% + 50px);
-  height: calc(100% + 50px);
+  top: -32px;
+  left: -32px;
+  width: calc(100% + 65px);
+  height: calc(100% + 65px);
   border: 2px solid #84ebe8;
   box-shadow: 0 0 7px 5px #73cadb;
 }
@@ -203,6 +202,35 @@ img {
   height: 100%;
   border-radius: 50%;
 }
+
+.strikje {
+  position: absolute; /* Positioning relative to the .image-container */
+  top: -17%; /* Adjust this value to move the strikje image above */
+  left: 50%;
+ z-index: 1	;
+  pointer-events: none; /* Prevent the strikje image from interfering with interactions */
+}
+
+.strikje img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  scale: 5;
+}
+
+.strikje::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 62%;
+  transform: translateX(-50%); /* Center the line horizontally */
+  width: 2px; /* Width of the vertical line */
+  height: 30px; /* Adjust height as needed */
+  background-color:#84ebe8; 
+  box-shadow: 0 0 7px 3px #73cadb;
+  z-index: -1; 
+}
+
 /*  */
 	figcaption {
 		position: absolute;
