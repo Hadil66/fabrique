@@ -51,13 +51,16 @@ bind:this={scrollContainer}
 				".webp"}
 			  type="image/webp"
 			/>
+			<div class="image-container">
+		
+
 			<img
 			  src={"https://fdnd-agency.directus.app/assets/" + art.image}
 			  alt={art.title}
 			  height={art.height}
 			  width={art.width}
 			  loading="lazy"
-			/>
+			/></div>
 		  </picture>
 		  <figcaption>
 			<h2>{art.title}</h2>
@@ -77,44 +80,51 @@ bind:this={scrollContainer}
 	.scroll-container {
 		display: flex;
 		overflow-x: auto;
-		padding: 1rem;
-		margin: 2.5rem;
+		overflow-y: visible;
+		padding:  4rem;
 		scroll-snap-type: x mandatory;
+		background-color: #000000;
+
 	}
 
 	.masonry {
 		column-count: 1;
-		column-gap: 1rem;
+		column-gap: 2rem;
 		list-style: none;
 		padding: 0;
+		margin-top: 3rem;
+
 	}
 
 	.masonry-item {
 		break-inside: avoid;
 		display: block;
 		background-color: #fff;
-		border-radius: 8px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		margin-bottom: 1rem;
+		border-radius: 50%;
+		box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+		margin: 2rem 2rem 2rem 2rem;
+
 		position: relative;
-		overflow: hidden;
-		transition: opacity 0.3s;
+		
 	}
 
 	.masonry-item.hidden {
 		filter: opacity(0.3);
 		pointer-events: none;
 		transition: 1s;
+	
+		
 	}
 
 	.masonry-item:focus {
 		outline: 2px solid #020202;
 		outline-offset: 3px;
+	
 	}
 
 	.masonry-item:hover img,
 	.masonry-item:focus img {
-		transform: scale(1.1);
+		transform: scale(1);
 	}
 
 	.masonry-item:hover figcaption,
@@ -125,16 +135,75 @@ bind:this={scrollContainer}
 	figure {
 		margin: 0;
 		position: relative;
+
 	}
 
-	img {
-		width: 100%;
-		height: auto;
-		display: block;
-		border-radius: 8px;
-		transition: transform 0.3s ease-in-out;
-	}
+	
+	.scroll-container {
+  display: flex;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: visible; /* Ensure halos aren't clipped */
+  padding: 4rem; /* Adjust to provide space for halos */
+  scroll-snap-type: x mandatory;
+  background-color: #000000;
+  position: relative; /* Needed for positioning */
+}
 
+.masonry {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.masonry-item {
+  position: relative;
+  margin-top: 6rem;
+  display: block;
+}
+
+.image-container {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.image-container::before,
+.image-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+
+}
+
+.image-container::before {
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  border: 2px solid #f374ff;
+  box-shadow: 
+  0 0 10px 5px rgba(243, 116, 255, 0.7)/* Full horizontal glow */
+ 
+  
+}
+
+.image-container::after {
+  top: -25px;
+  left: -25px;
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+  border: 2px solid #84ebe8;
+  box-shadow: 0 0 7px 5px #73cadb;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+/*  */
 	figcaption {
 		position: absolute;
 		top: 0;
@@ -149,6 +218,7 @@ bind:this={scrollContainer}
 		align-items: center;
 		opacity: 0;
 		transition: opacity 0.3s ease-in-out;
+		border-radius: 60%;
 	}
 
 	h2 {
@@ -156,6 +226,7 @@ bind:this={scrollContainer}
 		margin: 0.5rem 0;
 		text-align: center;
 		-webkit-text-stroke: 0.2px #ffff00;
+		border-radius: 60%;
 	}
 
 	/* Responsiee layout */
