@@ -1,187 +1,199 @@
 <script>
-	export let data;
-	console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
+  export let data;
+</script>
 
-	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
-	let filterText = '';
-    
-	import Navbar from '$lib/Navbar.svelte';
-
-	import Searchbar from '$lib/molecules/searchbar.svelte';
-
-	let scrollContainer; // variable scroll container. 
-
-function handleScroll() {
-  // Als de gebruiker halverwege de scrollcontainer is gescrolld...
-  if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) { 
-    // ... scroll dan terug naar het begin van de tweede helft van de inhoud.
-    scrollContainer.scrollLeft -= scrollContainer.scrollWidth / 2;
-  }
-}
-  
-import { activeFilter } from "$lib/store";
-	import Filters from "$lib/molecules/Filters.svelte";
-  
-	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
-  </script>
-
-<Navbar />
-<div class="scroll-container"
-bind:this={scrollContainer}
-  on:scroll={handleScroll}>
-  <ul class="masonry">
-	{#each data.artObjects as art, index}
-	  <li
-		class="masonry-item"
-		class:hidden={$activeFilter !== "*" &&
-		  $activeFilter !== techniques[index % techniques.length]}
-		data-category={techniques[index % techniques.length]}
-	  >
-		<figure>
-		  <picture>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
-				art.image +
-				".avif"}
-			  type="image/avif"
-			/>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
-				art.image +
-				".webp"}
-			  type="image/webp"
-			/>
-			<img
-			  src={"https://fdnd-agency.directus.app/assets/" + art.image}
-			  alt={art.title}
-			  height={art.height}
-			  width={art.width}
-			  loading="lazy"
-			/>
-		  </picture>
-		  <figcaption>
-			<h2>{art.title}</h2>
-		  </figcaption>
-		</figure>
-	  </li>
-	{/each}
-  </ul>
-</div>
-
-<div>
-	<Searchbar/>
-   <Filters />
+<div class="book">
+  <div class="cover">
+    <div class="cover-text">
+      <h1>qatar museums</h1>
+	  <svg viewBox="0 0 500 500">
+		<path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="none" />
+		<text width="500">
+		  <textPath xlink:href="#curve">
+			A Christmas Carol
+		  </textPath>
+		</text>
+	  </svg>    
+	</div>
+    <div class="back-cover"></div>
+  </div>
+  <div class="page">
+    <div class="page-content">
+      <ul class="masonry">
+        {#each data.artObjects as art, index}
+          <li>
+            <figure>
+              <img
+                src={"https://fdnd-agency.directus.app/assets/" + art.image}
+                alt={art.title}
+                height={art.height}
+                width={art.width}
+                loading="lazy"
+              />
+              <figcaption>
+                <h2>{art.title}</h2>
+              </figcaption>
+            </figure>
+          </li>
+        {/each}
+      </ul>
+    </div>
+  </div>
+  <div class="side"></div>
+  <div class="bottom"></div>
+  <div class="shadow"></div>
 </div>
 
 <style>
-	.scroll-container {
-		display: flex;
-		overflow-x: auto;
-		padding: 1rem;
-		margin: 2.5rem;
-		scroll-snap-type: x mandatory;
-	}
+  .book {
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(-45deg);
+    transition: transform 1s;
+    position: relative;
+    width: max-content;
+    height: 40em;
+	margin: 5em;
+  }
 
-	.masonry {
-		column-count: 1;
-		column-gap: 1rem;
-		list-style: none;
-		padding: 0;
-	}
+  .book .side {
+    width: 3em;
+    height: 40em;
+    background-image: url(/cover.png);
+    position: absolute;
+    left: -3em;
+    top: 0;
+    transform-origin: 100% 100%;
+    transform: rotateY(-90deg) rotateX(0deg);
+  }
 
-	.masonry-item {
-		break-inside: avoid;
-		display: block;
-		background-color: #fff;
-		border-radius: 8px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		margin-bottom: 1rem;
-		position: relative;
-		overflow: hidden;
-		transition: opacity 0.3s;
-	}
+  .book .bottom {
+    width: 25em;
+    height: 3em;
+    background: var(--eggshell);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform-origin: 100% 100%;
+    transform: rotateX(90deg);
+  }
 
-	.masonry-item.hidden {
-		filter: opacity(0.3);
-		pointer-events: none;
-		transition: 1s;
-	}
+  .book .shadow {
+    background: transparent;
+    transform: translateZ(-3em);
+    box-shadow: -1em 1em 0px 0px var(--eerie-black);
+    z-index: 1;
+    width: 25em;
+    height: 40em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-	.masonry-item:focus {
-		outline: 2px solid #020202;
-		outline-offset: 3px;
-	}
+  .book .cover {
+    background-image: url(/cover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 40em;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition:
+    transform 1s,
+	box-shadow 0.5s 0.2s;
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+    width: 25em;
+    z-index: 8;
+  }
 
-	.masonry-item:hover img,
-	.masonry-item:focus img {
-		transform: scale(1.1);
-	}
+  .book .cover.open {
+    box-shadow: 2.2em 1em 0px 0px var(--eerie-black);
+    transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
+  }
 
-	.masonry-item:hover figcaption,
-	.masonry-item:focus figcaption {
-		opacity: 1;
-	}
+  .book .cover-text {
+  padding: 1em;
+  position: absolute;
+  z-index: 2;
+}
 
-	figure {
-		margin: 0;
-		position: relative;
-	}
+h1, svg {
+  position: absolute;
+  text-transform: capitalize;
+}
 
-	img {
-		width: 100%;
-		height: auto;
-		display: block;
-		border-radius: 8px;
-		transition: transform 0.3s ease-in-out;
-	}
+h1 {
+  font-size: 1.5em;
+  top: 1.5em;
+  left: 5.2em;
+  color: var(--eggshell);
+  letter-spacing: 1px;
+  width: max-content;
+}
 
-	figcaption {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.6);
-		color: white;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		opacity: 0;
-		transition: opacity 0.3s ease-in-out;
-	}
+svg  {
+  z-index: 15;
+  top: 2em;
+  left: 2em;
+  width: 100%;
+  height: auto;
+}
 
-	h2 {
-		font-size: 16px;
-		margin: 0.5rem 0;
-		text-align: center;
-		-webkit-text-stroke: 0.2px #ffff00;
-	}
+svg textPath {
+	  fill: var(--eggshell);
+	  font-size: 2em;
+}
 
-	/* Responsiee layout */
-	@media (min-width: 600px) {
-		.masonry {
-			column-count: 2;
-		}
-	}
+  .book .back-cover {
+    background: var(--burgundy);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    transform: translateZ(-0.4px);
+  }
 
-	@media (min-width: 900px) {
-		.masonry {
-			column-count: 3;
-		}
-		h2 {
-			font-size: 1.5rem;
-		}
-	}
+  .book .page {
+    width: 25em;
+    height: 40em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+    transition:
+    transform 1s,
+    box-shadow 0.5s 0.2s;
+    z-index: 7;
+  }
 
-	/* Prefers reduced motion */
-	@media (prefers-reduced-motion) {
-		.masonry-item {
-			transition: none;
-		}
+  .book .page-content {
+    background-image: url(/background1.jpg);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+  }
 
-		img {
-			transition: none;
-		}
-	}
+  .book.open {
+    transform: rotateX(35deg) rotateY(0deg) rotateZ(-35deg);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2em;
+  }
+  li {
+    background-image: url(/content.jpg);
+    background-position: center;
+    height: 10em;
+    list-style-type: "";
+    width: 8em;
+    background-repeat: no-repeat;
+  }
 </style>
