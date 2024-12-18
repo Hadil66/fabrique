@@ -51,7 +51,6 @@
     left: 50%;
     transform: translateX(-50%);
     width: 25em;
-    z-index: 32;
   }
 
   ::-webkit-scrollbar {
