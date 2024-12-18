@@ -25,6 +25,8 @@ import { activeFilter } from "$lib/store";
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
   </script>
 
+<div class="door-frame">
+	<div class="door"></div>
 <Navbar />
 <div class="scroll-container"
 bind:this={scrollContainer}
@@ -71,6 +73,7 @@ bind:this={scrollContainer}
 <div>
 	<Searchbar/>
    <Filters />
+</div>
 </div>
 
 <style>
@@ -184,4 +187,44 @@ bind:this={scrollContainer}
 			transition: none;
 		}
 	}
+
+	.door-frame {
+		z-index: 10;
+	width: 200px;
+	height: 400px;
+	background-color: #000;
+	border: 15px solid #ff0;
+	border-radius: 2px;
+	position: relative;
+	perspective: 800px; /* Adding perspective for 3D effect */
+}
+
+.door {
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background-color: #8b4513; /* Brown door */
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform-origin: left; /* Pivot the door from the left side */
+	transform: rotateY(0deg);
+	transition: transform 2s ease-in-out;
+}
+
+.door::before {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 40px;
+	background-color: #222;
+	border-radius: 20%;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.door-frame:hover .door {
+	transform: rotateY(-120deg); /* Swing open to 120 degrees */
+}
 </style>
