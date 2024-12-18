@@ -136,8 +136,8 @@ svg  {
   z-index: 15;
   top: 2em;
   left: 2em;
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 50vh;
 }
 
 svg textPath {
