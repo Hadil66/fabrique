@@ -1,20 +1,28 @@
 <script>
     import { onNavigate } from '$app/navigation';
-
-    onNavigate((navigation) => {
-        if (!document.startViewTransition) return;
-
-        return new Promise(resolve => {
+    
+    function delayNavigation() {
+        return new Promise((resolve) => setTimeout(resolve, 100));
+    }
+    
+    onNavigate(async (navigation) => {
+        if (!document.startViewTransition) {
+            await delayNavigation();
+            return;
+        }
+    
+        return new Promise((resolve) => {
             document.startViewTransition(async () => {
-                resolve();
-                await navigation.complete;
+            await delayNavigation();
+            resolve();
+            await navigation.complete;
             });
         });
     });
-</script>
+    </script>
 
 <div>
-    <h1>qatar museums</h1>
+    <p>qatar museums</p>
 </div>
 <slot />
 <style>
@@ -23,28 +31,46 @@
        background-size: cover;
        background-repeat: no-repeat;
        background-position: center;
-       width: 100vw;
-       height: 100vh;
-       position: absolute;
-       top: 50%;
-       left: 50%;
-       transform: translate(-50%, -50%) scale(0);
        border-radius: 50%;
+       height: 100vh;
+       left: 50%;
+       position: absolute;
        overflow: hidden;
-       animation: grow 3s forwards;
-       display: none;
-   }
+       top: 50%;
+       transform: translateX(-180%);
+       view-transition-name: vi;
+       width: 100vw;
+
+    }
+    
+    @media (prefers-reduced-motion: no-preference) {
+        :root::view-transition-group(vi) {
+            animation: grow 3s forwards;
+        }
+    } 
 
    @keyframes grow {
        0% {
-           transform: translate(-50%, -50%) scale(0);
+        transform: none;
+        scale: 0;
        }
+
+       40%, 60% {
+            opacity: 1;
+            scale: 1.45;
+       }
+
+       99% {
+            opacity: 0;  
+            transform: none;
+       }
+
        100% {
-           transform: translate(-50%, -50%) scale(1.5); 
+            transform: translateX(-180%)
        }
    }
 
-     h1 {
+     p {
         position: absolute;
         top: 26%;
         left: 31%;
