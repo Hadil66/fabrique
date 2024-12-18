@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1052px" height="700px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g><path style="opacity:1" fill="#000000" d="M -0.5,-0.5 C 350.167,-0.5 700.833,-0.5 1051.5,-0.5C 1051.5,232.833 1051.5,466.167 1051.5,699.5C 700.833,699.5 350.167,699.5 -0.5,699.5C -0.5,466.167 -0.5,232.833 -0.5,-0.5 Z"/></g>
+<g><path style="opacity:1" fill="#bebebe" d="M 422.5,138.5 C 422.5,279.833 422.5,421.167 422.5,562.5C 492.833,562.5 563.167,562.5 633.5,562.5C 633.5,421.167 633.5,279.833 633.5,138.5C 634.5,279.999 634.833,421.666 634.5,563.5C 563.5,563.5 492.5,563.5 421.5,563.5C 421.167,421.666 421.5,279.999 422.5,138.5 Z"/></g>
+<g><path style="opacity:1" fill="#fefffe" d="M 422.5,138.5 C 492.833,138.5 563.167,138.5 633.5,138.5C 633.5,279.833 633.5,421.167 633.5,562.5C 563.167,562.5 492.833,562.5 422.5,562.5C 422.5,421.167 422.5,279.833 422.5,138.5 Z"/></g>
+</svg>
