@@ -1,5 +1,5 @@
 > Creative coding spike 1: Scroll driven animation 
-## Thema
+### Thema
 <img src="https://github.com/user-attachments/assets/ce8df72e-82af-40a0-961f-ea17cb544c0b" width="900px">
 
 ### Moodboard
@@ -50,11 +50,10 @@ De header is geanimeerd met behulp van CSS keyframes. De animatie wordt getrigge
 
 ### [**Live URL**](https://fabrique-9wkyqzq7t-hadil-s-projects.vercel.app/)
 
-> Creative coding spike 3: Christmas 
-### Moodboard
-
+> Creative coding spike 3: Christmas
+### Thema
 <img src= "https://github.com/user-attachments/assets/9e56b4e9-cb11-4240-bcfc-83bfbd67d7b2" width="500px">
-
+### Moodboard
 <img src= "https://github.com/user-attachments/assets/e9e98f5a-74e9-4293-a85b-86f07c32df29" width="500px">
 
 
