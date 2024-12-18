@@ -40,6 +40,7 @@
 </ul>
 
 <style>
+
   ul {
     backdrop-filter: blur(4px);
     bottom: 6em;
@@ -53,31 +54,33 @@
     width: 25em;
     z-index: 32;
   }
-
+  
   ::-webkit-scrollbar {
     display: none;
   }
-
+  
   ul li {
     cursor: pointer;
     list-style-type: "";
   }
-
+  
   @media (prefers-reduced-motion) {
     ul li button:focus,
     ul li button:hover {
-      box-shadow: 2px 2px 2px #989802;
-      background-color: #ffff00;
-      color: #000;
+      box-shadow: 2px 2px 2px lch(37 90.45 43.27);
+      background-color: lch(37 90.45 43.27);
+      color: #fff;
     }
   }
-
+  
   ul button {
-    background-color: #464646;
+    background-color: #fff;
     border: none;
     border-radius: 4px;
-    color: white;
+    box-shadow: 2px 0px 7px 4px #615959;
+    color: lch(37 90.45 43.27);
     cursor: pointer;
+    font-family: "SuperWoobly";
     font-size: 18px;
     margin: 0.5em;
     padding: 0.5em;
@@ -88,16 +91,16 @@
     width: max-content;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion:no-preference) {
     ul button:focus,
     ul button:hover {
-      box-shadow: inset 6.5em 0 0 0 #ffff00;
+      box-shadow: inset 9em 0 0 0 lch(37 90.45 43.27);
     }
   }
 
   ul button:hover,
   ul button:focus {
-    color: #000;
+    color: #fff;
   }
 
   @media (min-width: 600px) {

@@ -1,14 +1,25 @@
 <script>
 	export let data;
-	console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
 
+	import Header from '$lib/molecules/Header.svelte';
 	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
-	let filterText = '';
-    
-	import Navbar from '$lib/Navbar.svelte';
-
 	import Searchbar from '$lib/molecules/searchbar.svelte';
+	import { activeFilter } from "$lib/store";
+	import Filters from "$lib/molecules/Filters.svelte";
+	import { onMount } from 'svelte';
+	import Cursor from '$lib/Atoms/Icons/Cursor.svelte';
 
+    onMount( async () => { 
+		window.addEventListener('scroll', () => {
+		const playAudio = document.querySelector("audio");
+
+		if (window.scrollY > 10) {
+			playAudio.play();
+		}
+		});
+	});
+	
+	let filterText = '';
 	let scrollContainer; // variable scroll container. 
 
 function handleScroll() {
@@ -19,53 +30,60 @@ function handleScroll() {
   }
 }
   
-import { activeFilter } from "$lib/store";
-	import Filters from "$lib/molecules/Filters.svelte";
   
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
-  </script>
+	</script>
 
-<Navbar />
+
+<Header />
+<audio autoplay loop src="/AHS.mp3"></audio>
 <div class="scroll-container"
 bind:this={scrollContainer}
-  on:scroll={handleScroll}>
-  <ul class="masonry">
+on:scroll={handleScroll}>
+<ul class="masonry">
 	{#each data.artObjects as art, index}
-	  <li
-		class="masonry-item"
-		class:hidden={$activeFilter !== "*" &&
+	<li
+	class="masonry-item"
+	class:hidden={$activeFilter !== "*" &&
 		  $activeFilter !== techniques[index % techniques.length]}
 		data-category={techniques[index % techniques.length]}
-	  >
+		>
 		<figure>
-		  <picture>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
+			<picture>
+				<source
+				srcset={"https://fdnd-agency.directus.app/assets/" +
 				art.image +
 				".avif"}
 			  type="image/avif"
-			/>
-			<source
+			  />
+			  <source
 			  srcset={"https://fdnd-agency.directus.app/assets/" +
 				art.image +
 				".webp"}
 			  type="image/webp"
-			/>
-			<img
+			  />
+			  <img
 			  src={"https://fdnd-agency.directus.app/assets/" + art.image}
 			  alt={art.title}
 			  height={art.height}
 			  width={art.width}
 			  loading="lazy"
-			/>
-		  </picture>
-		  <figcaption>
-			<h2>{art.title}</h2>
-		  </figcaption>
+			  />
+			</picture>
+			
+			
+			<figcaption>
+				<h2>{art.title}</h2>
+				<img src="/bloody-hands.png">
+			</figcaption>
 		</figure>
 	  </li>
 	{/each}
   </ul>
+  <img class="twisty" src="/twisty.png">
+
+  <img class="twisty" src="/twisty.png">
+
 </div>
 
 <div>
@@ -77,16 +95,17 @@ bind:this={scrollContainer}
 	.scroll-container {
 		display: flex;
 		overflow-x: auto;
-		padding: 1rem;
-		margin: 2.5rem;
+		padding: 0;
+		margin: 0;
 		scroll-snap-type: x mandatory;
 	}
 
 	.masonry {
 		column-count: 1;
-		column-gap: 1rem;
+		column-gap: 1em;
 		list-style: none;
-		padding: 0;
+		padding: 0 6em;
+		margin: 0;
 	}
 
 	.masonry-item {
@@ -99,6 +118,7 @@ bind:this={scrollContainer}
 		position: relative;
 		overflow: hidden;
 		transition: opacity 0.3s;
+		z-index: 24;
 	}
 
 	.masonry-item.hidden {
@@ -119,7 +139,12 @@ bind:this={scrollContainer}
 
 	.masonry-item:hover figcaption,
 	.masonry-item:focus figcaption {
-		opacity: 1;
+		opacity: 0.5;
+	}
+
+	
+	figcaption img {
+		scale: 0.7;
 	}
 
 	figure {
@@ -133,6 +158,7 @@ bind:this={scrollContainer}
 		display: block;
 		border-radius: 8px;
 		transition: transform 0.3s ease-in-out;
+		filter: grayscale(0.5);
 	}
 
 	figcaption {
@@ -141,7 +167,7 @@ bind:this={scrollContainer}
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.6);
+		background-color: white;
 		color: white;
 		display: flex;
 		flex-direction: column;
@@ -155,7 +181,38 @@ bind:this={scrollContainer}
 		font-size: 16px;
 		margin: 0.5rem 0;
 		text-align: center;
-		-webkit-text-stroke: 0.2px #ffff00;
+		-webkit-text-stroke: 0.2px lch(37 90.45 43.27);
+	}
+
+	.twisty {
+		position: fixed;
+		opacity: 0.5;
+		width: 300px;
+	}
+
+	.twisty:nth-of-type(1) {
+		animation: jumpscare1 0.5s forwards;
+		animation-range: 0vh 100vh;
+		animation-timeline: scroll();
+		left: -5em;
+		top: 8em;
+	}
+
+	.twisty:nth-of-type(2) {
+		animation: jumpscare2 0.5s forwards;
+		animation-timeline: scroll();
+		top: 15em;
+		right: -6em;
+	}
+
+	@keyframes jumpscare1 {
+		0% { transform: translateX(-10vw); }
+		100% { transform: translateX(0); }
+	}
+
+	@keyframes jumpscare2 {
+		0% { transform: translateX(10vw); }
+		100% { transform: translateX(0); }
 	}
 
 	/* Responsiee layout */
