@@ -81,7 +81,7 @@
 
 
     .full-door {
-        z-index: 100;
+        z-index: 10;
         position: relative;
 	background-color: #2d2d2d;
 	display: flex;
@@ -90,12 +90,14 @@
 	height: 100vh;
 	margin: 0;
 	font-family: "Arial", sans-serif;
+    animation: scale 5s forwards;
+    overflow-y: hidden;
 }
 
 .door-frame {
 	width: 200px;
 	height: 400px;
-background-color: transparent;
+    background-color: transparent;
 	border: 15px solid #ff0;
 	border-radius: 2px;
 	position: relative;
@@ -112,6 +114,7 @@ background-color: transparent;
 	transform-origin: left; /* Pivot the door from the left side */
 	transform: rotateY(0deg);
 	transition: transform 2s ease-in-out;
+    animation: door 4s forwards;
 }
 
 .door::before {
@@ -126,8 +129,35 @@ background-color: transparent;
 	transform: translateY(-50%);
 }
 
-.door-frame:hover .door {
-	transform: rotateY(-120deg); /* Swing open to 120 degrees */
+
+
+@keyframes door{
+    to{transform: rotateY(-120deg); /* Swing open to 120 degrees */
+    }
+    }
+
+@keyframes scale{
+    0% {transform: scale(1);
+  }
+    50% {transform: scale(2);
+        background-color: #2d2d2d;
+  }
+   100% {transform: scale(8);
+    background-color: transparent;
+    display: none;
+ }
+    }
+
+    .main {
+	z-index: 11;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	animation: main-loadup forwards linear, main-loadup-bg forwards linear;
+	animation-delay: 7s, 8s;
 }
 
 @keyframes main-loadup {
