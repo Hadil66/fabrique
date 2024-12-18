@@ -6,6 +6,7 @@
 </div>
 </div>
 
+<div class="masked"></div>
 
 <div class="main">
 	<div class="initial-snow">
@@ -65,6 +66,20 @@
 <slot/>
 
 <style>
+
+.masked {
+  width: 200px;
+  height: 200px;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+
+  background: red;
+  mask-image: url(/static/deur-zwart.svg),
+    radial-gradient(transparent 50%, black);
+}
+
+
+
     .full-door {
         z-index: 100;
         position: relative;
