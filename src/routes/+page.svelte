@@ -2,7 +2,7 @@
   export let data;
 
   let filterText = "";
-  
+
   import Search from "$lib/Search.svelte";
   import Searchbar from "$lib/molecules/searchbar.svelte";
 
@@ -19,21 +19,22 @@
 </script>
 
 <header>
-  <a href="/page2"><h1>qatar museums</h1></a>
+  <h1>qatar museums</h1>
 </header>
 
 <div class="scroll-container">
   <ul class="masonry">
     {#each data.artObjects as art, index}
-      <li
+    <a href="/detailpage"><li
         class="masonry-item"
-        class:hidden={$activeFilter !== "*" && $activeFilter !== techniques[index % techniques.length]}
+        class:hidden={$activeFilter !== "*" &&
+          $activeFilter !== techniques[index % techniques.length]}
         data-category={techniques[index % techniques.length]}
       >
         <figure>
           <figcaption class="caption-{index % 5}"></figcaption>
         </figure>
-      </li>
+      </li></a>
     {/each}
   </ul>
 </div>
@@ -45,13 +46,13 @@
 
 <style>
   header {
-	background:repeating-linear-gradient(
-		45deg,
-		var(--argentinian-blue),
-		var(--argentinian-blue) 10px,
-		var(--rose)10px,
-		var(--rose) 20px
-		);
+    background: repeating-linear-gradient(
+      45deg,
+      var(--argentinian-blue),
+      var(--argentinian-blue) 10px,
+      var(--rose) 10px,
+      var(--rose) 20px
+    );
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,12 +65,8 @@
     z-index: 33;
   }
 
-	a {
-		text-decoration: none;
-	}
-
-  header a:hover h1 {
-	font-size: 3.2em;
+  a {
+    text-decoration: none;
   }
 
   h1 {
@@ -84,17 +81,50 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-	margin: 5vh 0 0 0;
+    margin: 5vh 0 0 0;
   }
 
   .masonry {
-	background: var(--rose);
-	background-image: radial-gradient(#ff78dfff 40%, transparent 0);
-	background-size: 35px 35px;
+    animation: changeColor 10s infinite alternate;
+    background: var(--rose);
+    background-image: radial-gradient(#ff78dfff 40%, transparent 0);
+    background-size: 35px 35px;
     column-count: 2;
     column-gap: 0;
     list-style: none;
     padding: 0;
+  }
+
+  @keyframes changeColor {
+    0% {
+      background: var(--persian-blue);
+      background-image: radial-gradient(#ff78dfff 40%, transparent 0%);
+      background-size: 35px 35px;
+    }
+
+    25% {
+      background: var(--rose);
+      background-image: radial-gradient(#fed715 40%, transparent 0%);
+      background-size: 35px 35px;
+    }
+
+    50% {
+      background: var(--rose-pink);
+      background-image: radial-gradient(#70baff 40%, transparent 0%);
+      background-size: 35px 35px;
+    }
+
+    75% {
+      background: var(--argentinian-blue);
+      background-image: radial-gradient(#fe0879 40%, transparent 0%);
+      background-size: 35px 35px;
+    }
+
+    100% {
+      background: var(--gold);
+      background-image: radial-gradient(#0037b3 40%, transparent 0%);
+      background-size: 35px 35px;
+    }
   }
 
   .caption-0,
@@ -133,7 +163,6 @@
     filter: opacity(0);
     pointer-events: none;
     transition: 1s;
-	
   }
 
   figure {

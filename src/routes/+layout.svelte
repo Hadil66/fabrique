@@ -34,7 +34,7 @@
        border-radius: 50%;
        height: 100vh;
        left: 50%;
-       position: absolute;
+       position: fixed;
        overflow: hidden;
        top: 50%;
        transform: translateX(-180%);
@@ -53,6 +53,7 @@
        0% {
         transform: none;
         scale: 0;
+        opacity: 0;
        }
 
        40%, 60% {
