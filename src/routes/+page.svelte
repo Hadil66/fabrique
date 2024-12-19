@@ -113,8 +113,7 @@
   }
 
   .book .cover-text {
-  padding: 1em;
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
@@ -125,19 +124,22 @@ h1, svg {
 
 h1 {
   font-size: 1.5em;
-  top: 1.5em;
-  left: 5.2em;
+  top: 10.8em;
+  left: 6em;
   color: var(--eggshell);
   letter-spacing: 1px;
   width: max-content;
+  width: 5.7em;
+  text-align: center;
 }
 
 svg  {
   z-index: 15;
-  top: 2em;
-  left: 2em;
-  width: 100vw;
-  height: 50vh;
+  top: 1.8em;
+  left: -9em;
+  width: 51vw;
+  height: 66vh;
+  rotate: 26deg;
 }
 
 svg textPath {
