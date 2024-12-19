@@ -36,7 +36,7 @@ function handleScroll() {
 
 
 <Header />
-<audio autoplay loop src="/AHS.mp3"></audio>
+<audio autoplay loop src="/spooky.mp3"></audio>
 <div class="scroll-container"
 bind:this={scrollContainer}
 on:scroll={handleScroll}>
