@@ -26,5 +26,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--black);
+    /* background: var(--old-gold); */
+    background-image: url(/background1.jpg);
+
 }
+
