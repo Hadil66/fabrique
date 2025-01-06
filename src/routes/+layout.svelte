@@ -74,7 +74,7 @@
   mask-size: 100%;
 
   background: red;
-  mask-image: url(/static/deur-zwart.svg),
+  mask-image: url(https://raw.githubusercontent.com/Hadil66/fabrique/b756b177e41d75b69680610986fedbc1b542d454/static/deur-zwart.svg),
     radial-gradient(transparent 50%, black);
 }
 
@@ -84,6 +84,7 @@
         z-index: 10;
         position: relative;
 	background-color: #2d2d2d;
+    /* mask-image: url(https://raw.githubusercontent.com/Hadil66/fabrique/30c06523ced397592183b688c9f4addfcc8f3c9a/static/deur-wit.svg); */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -140,10 +141,10 @@
     0% {transform: scale(1);
   }
     50% {transform: scale(2);
-        background-color: #2d2d2d;
+    
   }
    100% {transform: scale(8);
-    background-color: transparent;
+ 
     display: none;
  }
     }
