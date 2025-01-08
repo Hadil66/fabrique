@@ -23,6 +23,34 @@ import { activeFilter } from "$lib/store";
 	import Filters from "$lib/molecules/Filters.svelte";
   
 	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
+
+	
+	import { onMount, onDestroy } from 'svelte';
+  import Lenis from '@studio-freight/lenis';
+
+  let lenis;
+
+  onMount(() => {
+    // Initialize Lenis
+    lenis = new Lenis({ infinite: true, syncTouch: true });
+
+    // Define the requestAnimationFrame function
+    function onRaf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(onRaf);
+    }
+
+    // Start the animation frame loop
+    requestAnimationFrame(onRaf);
+  });
+
+  onDestroy(() => {
+    // Cleanup if necessary (e.g., stop the animation frame)
+    lenis = null; // or any other cleanup logic if required
+  });console.log('Scroll container:', scrollContainer);
+console.log('Active filter:', $activeFilter);
+console.log('Techniques:', techniques);
+console.log('Lenis:', lenis);
   </script>
 
 <Header />
