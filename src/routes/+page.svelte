@@ -23,8 +23,7 @@
 	<Header />
 
 	<div class="scroll-container" bind:this={scrollContainer} on:scroll={handleScroll}>
-		<ul class="masonry">
-		{#each [...data.artObjects, ...data.artObjects] as art, index}
+		<ul class="masonry">{#each data.artObjects as art, index}
 		<!-- Inhoud dupliceren om een infinite scroll effect te creëren -->
 		<li
 			class="masonry-item"
@@ -72,7 +71,6 @@
 		margin: 2.5rem;
 		scroll-snap-type: both mandatory;
 		width: 100%;
-	
 		white-space: nowrap;
 		scroll-behavior:auto;
 	}
