@@ -48,7 +48,7 @@
 			<figcaption>
 			  <h2>{art.title}</h2>
 			</figcaption>
-			
+
 		  </figure>
 		</li>
 	  {/each}
