@@ -21,6 +21,7 @@
 </script>
 
 	<Header />
+
 	<div class="scroll-container" bind:this={scrollContainer} on:scroll={handleScroll}>
 		<ul class="masonry">
 		{#each [...data.artObjects, ...data.artObjects] as art, index}
@@ -56,9 +57,10 @@
 		{/each}
 		</ul>
 	</div>
+
 	<div>
-	<Searchbar />
-	<Filters />
+		<Searchbar />
+		<Filters />
 	</div>
 
 	<style>
@@ -73,7 +75,6 @@
 	
 		white-space: nowrap;
 		scroll-behavior:auto;
-
 	}
 
 	.scroll-container::-webkit-scrollbar {
