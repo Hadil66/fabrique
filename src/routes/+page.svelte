@@ -20,110 +20,111 @@
   const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
 </script>
 
-<Header />
-<div class="scroll-container" bind:this={scrollContainer} on:scroll={handleScroll}>
-	<ul class="masonry">
-	  {#each [...data.artObjects, ...data.artObjects] as art, index}
-	  <!-- Inhoud dupliceren om een infinite scroll effect te creëren -->
-	  <li
-		class="masonry-item"
-		class:hidden={$activeFilter !== "*" && $activeFilter !== techniques[index % techniques.length]}
-		data-category={techniques[index % techniques.length]}
-	  >
-		<figure>
-		  <picture>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" + art.image + ".avif"}
-			  type="image/avif"
-			/>
-			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" + art.image + ".webp"}
-			  type="image/webp"
-			/>
-			<img
-			  src={"https://fdnd-agency.directus.app/assets/" + art.image}
-			  alt={art.title}
-			  height={art.height}
-			  width={art.width}
-			  loading="lazy"
-			/>
-		  </picture>
-		  <figcaption>
-			<h2>{art.title}</h2>
-		  </figcaption>
-		</figure>
-	  </li>
-	  {/each}
-	</ul>
-  </div>
-<div>
-  <Searchbar />
-  <Filters />
-</div>
+	<Header />
+	<div class="scroll-container" bind:this={scrollContainer} on:scroll={handleScroll}>
+		<ul class="masonry">
+		{#each [...data.artObjects, ...data.artObjects] as art, index}
+		<!-- Inhoud dupliceren om een infinite scroll effect te creëren -->
+		<li
+			class="masonry-item"
+			class:hidden={$activeFilter !== "*" && $activeFilter !== techniques[index % techniques.length]}
+			data-category={techniques[index % techniques.length]}
+		>
+			<figure>
+			<picture>
+				<source
+				srcset={"https://fdnd-agency.directus.app/assets/" + art.image + ".avif"}
+				type="image/avif"
+				/>
+				<source
+				srcset={"https://fdnd-agency.directus.app/assets/" + art.image + ".webp"}
+				type="image/webp"
+				/>
+				<img
+				src={"https://fdnd-agency.directus.app/assets/" + art.image}
+				alt={art.title}
+				height={art.height}
+				width={art.width}
+				loading="lazy"
+				/>
+			</picture>
+			<figcaption>
+				<h2>{art.title}</h2>
+			</figcaption>
+			</figure>
+		</li>
+		{/each}
+		</ul>
+	</div>
+	<div>
+	<Searchbar />
+	<Filters />
+	</div>
 
-<style>
-  .scroll-container {
-    /* display: flex; */
-    overflow-x: auto;
-    padding: 1rem;
-    margin: 2.5rem;
-    scroll-snap-type: both mandatory;
-    width: 100%;
-	height: 500vh;
-    white-space: nowrap;
-	scroll-behavior:auto;
-
-}
-
-.scroll-container::-webkit-scrollbar {
-	width: 0px;
-}
-
-	.masonry {
-		display: grid; /* meerdere rijen  */
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		grid-auto-rows: 200px;
-		gap: 1rem;
-		width: max-content; /* Zorgt ervoor dat de grid-container de breedte van de inhoud aanneemt */
-	}
-
-	.masonry-item {
-		background-color: #fff;
-		border-radius: 8px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		overflow: hidden;
-		position: relative;
-		transition: opacity 0.3s, transform 0.3s ease-in-out;
-	}
-
-	.masonry-item.hidden {
-		filter: opacity(0.3);
-		pointer-events: none;
-		transition: 1s;
-	}
-
-	.masonry-item:focus {
-		outline: 2px solid #020202;
-		outline-offset: 3px;
-	}
-
-	.masonry-item:hover img,
-	.masonry-item:focus img {
-		transform: scale(1.1);
-	}
-
-	figure {
-		margin: 0;
-		position: relative;
-	}
-
-	img {
+	<style>
+	.scroll-container {
+		/* display: flex; */
+		overflow-y: auto;
+		overflow-x: auto;
+		padding: 1rem;
+		margin: 2.5rem;
+		scroll-snap-type: both mandatory;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-		border-radius: 8px;
+	
+		white-space: nowrap;
+		scroll-behavior:auto;
+
 	}
+
+	.scroll-container::-webkit-scrollbar {
+		width: 0px;
+	}
+
+		.masonry {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			grid-auto-rows: 200px;
+			gap: 1rem;
+			width: max-content; 
+		}
+
+		.masonry-item {
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+			position: relative;
+			transition: opacity 0.3s, transform 0.3s ease-in-out;
+		}
+
+		.masonry-item.hidden {
+			filter: opacity(0.3);
+			pointer-events: none;
+			transition: 1s;
+		}
+
+		.masonry-item:focus {
+			outline: 2px solid #020202;
+			outline-offset: 3px;
+		}
+
+		.masonry-item:hover img,
+		.masonry-item:focus img {
+			transform: scale(1.1);
+		}
+
+		figure {
+			margin: 0;
+			position: relative;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			border-radius: 8px;
+		}
 
 	figcaption {
 		position: absolute;
