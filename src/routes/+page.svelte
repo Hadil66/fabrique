@@ -1,54 +1,43 @@
 <script>
-	export let data;
-	console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
+  export let data;
+  console.log(data); // Hiermee kun je zien hoe de API-respons eruitziet
 
-	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
-	let filterText = '';
-    
-	import Header from '$lib/molecules/Header.svelte';
+  import Header from '$lib/molecules/Header.svelte';
+  import Searchbar from '$lib/molecules/searchbar.svelte';
+  import { activeFilter } from "$lib/store";
+  import Filters from "$lib/molecules/Filters.svelte";
 
-	import Searchbar from '$lib/molecules/searchbar.svelte';
+  let scrollContainer;
 
-	let scrollContainer; // variable scroll container. 
-
-function handleScroll() {
-  // Als de gebruiker halverwege de scrollcontainer is gescrolld...
-  if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) { 
-    // ... scroll dan terug naar het begin van de tweede helft van de inhoud.
-    scrollContainer.scrollLeft -= scrollContainer.scrollWidth / 2;
+  function handleScroll() {
+    // Als de gebruiker halverwege de scrollcontainer is gescrolld...
+    if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+      // ... scroll dan terug naar het begin van de tweede helft van de inhoud.
+      scrollContainer.scrollLeft -= scrollContainer.scrollWidth / 2;
+    }
   }
-}
-  
-import { activeFilter } from "$lib/store";
-	import Filters from "$lib/molecules/Filters.svelte";
-  
-	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
-  </script>
+
+  const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
+</script>
 
 <Header />
-<div class="scroll-container"
-bind:this={scrollContainer}
-  on:scroll={handleScroll}>
-  <ul class="masonry">
-	{#each data.artObjects as art, index}
+<div class="scroll-container" bind:this={scrollContainer} on:scroll={handleScroll}>
+	<ul class="masonry">
+	  {#each [...data.artObjects, ...data.artObjects] as art, index}
+	  <!-- Inhoud dupliceren om een infinite scroll effect te creëren -->
 	  <li
 		class="masonry-item"
-		class:hidden={$activeFilter !== "*" &&
-		  $activeFilter !== techniques[index % techniques.length]}
+		class:hidden={$activeFilter !== "*" && $activeFilter !== techniques[index % techniques.length]}
 		data-category={techniques[index % techniques.length]}
 	  >
 		<figure>
 		  <picture>
 			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
-				art.image +
-				".avif"}
+			  srcset={"https://fdnd-agency.directus.app/assets/" + art.image + ".avif"}
 			  type="image/avif"
 			/>
 			<source
-			  srcset={"https://fdnd-agency.directus.app/assets/" +
-				art.image +
-				".webp"}
+			  srcset={"https://fdnd-agency.directus.app/assets/" + art.image + ".webp"}
 			  type="image/webp"
 			/>
 			<img
@@ -64,41 +53,46 @@ bind:this={scrollContainer}
 		  </figcaption>
 		</figure>
 	  </li>
-	{/each}
-  </ul>
-</div>
-
+	  {/each}
+	</ul>
+  </div>
 <div>
-	<Searchbar/>
-   <Filters />
+  <Searchbar />
+  <Filters />
 </div>
 
 <style>
-	.scroll-container {
-		display: flex;
-		overflow-x: auto;
-		padding: 1rem;
-		margin: 2.5rem;
-		scroll-snap-type: x mandatory;
-	}
+  .scroll-container {
+    /* display: flex; */
+    overflow-x: auto;
+    padding: 1rem;
+    margin: 2.5rem;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    white-space: nowrap;
+	scroll-behavior:auto;
+
+}
+
+.scroll-container::-webkit-scrollbar {
+	width: 0px;
+}
 
 	.masonry {
-		column-count: 1;
-		column-gap: 1rem;
-		list-style: none;
-		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-auto-rows: 200px;
+		gap: 1rem;
+		width: max-content; /* Zorgt ervoor dat de grid-container de breedte van de inhoud aanneemt */
 	}
 
 	.masonry-item {
-		break-inside: avoid;
-		display: block;
 		background-color: #fff;
 		border-radius: 8px;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		margin-bottom: 1rem;
-		position: relative;
 		overflow: hidden;
-		transition: opacity 0.3s;
+		position: relative;
+		transition: opacity 0.3s, transform 0.3s ease-in-out;
 	}
 
 	.masonry-item.hidden {
@@ -117,11 +111,6 @@ bind:this={scrollContainer}
 		transform: scale(1.1);
 	}
 
-	.masonry-item:hover figcaption,
-	.masonry-item:focus figcaption {
-		opacity: 1;
-	}
-
 	figure {
 		margin: 0;
 		position: relative;
@@ -129,10 +118,10 @@ bind:this={scrollContainer}
 
 	img {
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: cover;
 		display: block;
 		border-radius: 8px;
-		transition: transform 0.3s ease-in-out;
 	}
 
 	figcaption {
@@ -151,6 +140,10 @@ bind:this={scrollContainer}
 		transition: opacity 0.3s ease-in-out;
 	}
 
+	.masonry-item:hover figcaption,
+	.masonry-item:focus figcaption {
+		opacity: 1;
+	}
 	h2 {
 		font-size: 16px;
 		margin: 0.5rem 0;
