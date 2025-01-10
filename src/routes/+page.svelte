@@ -29,6 +29,9 @@ import { activeFilter } from "$lib/store";
 <div class="scroll-container"
 bind:this={scrollContainer}
   on:scroll={handleScroll}>
+  <div class="horizontal-scroll">
+
+  
   <ul class="masonry">
 	{#each data.artObjects as art, index}
 	  <li
@@ -67,6 +70,7 @@ bind:this={scrollContainer}
 	{/each}
   </ul>
 </div>
+</div>
 
 <div>
 	<Searchbar/>
@@ -81,6 +85,12 @@ bind:this={scrollContainer}
 		margin: 2.5rem;
 		scroll-snap-type: x mandatory;
 	}
+	.horizontal-scroll {
+    overflow-x: auto;
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem; /* Space between horizontal and vertical */
+  }
 
 	.masonry {
 		column-count: 1;
