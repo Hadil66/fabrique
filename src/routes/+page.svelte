@@ -67,8 +67,9 @@
     overflow-x: auto;
     padding: 1rem;
     margin: 2.5rem;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: both mandatory;
     width: 100%;
+	height: 500vh;
     white-space: nowrap;
 	scroll-behavior:auto;
 
@@ -79,7 +80,7 @@
 }
 
 	.masonry {
-		display: grid;
+		display: grid; /* meerdere rijen  */
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-auto-rows: 200px;
 		gap: 1rem;
