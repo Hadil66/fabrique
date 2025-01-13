@@ -1,7 +1,7 @@
 <script>
 	import { activeFilter } from "$lib/store";
 	import Header from '$lib/molecules/Header.svelte';
-	import Searchbar from '$lib/molecules/searchbar.svelte';
+	import Searchbar from '$lib/molecules/Searchbar.svelte';
 	import ArtObject from '$lib/molecules/ArtObject.svelte';
 	import Filters from "$lib/molecules/Filters.svelte";
 
@@ -58,7 +58,6 @@ bind:this={scrollContainer}
 		padding: 0;
 	}
 
-	/* Responsiee layout */
 	@media (min-width: 600px) {
 		.masonry {
 			column-count: 2;

@@ -45,12 +45,6 @@
 		transition: opacity 0.3s;
 	}
 
-	.masonry-item.hidden {
-		filter: opacity(0.3);
-		pointer-events: none;
-		transition: 1s;
-	}
-
 	.masonry-item:focus {
 		outline: 2px solid #020202;
 		outline-offset: 3px;
