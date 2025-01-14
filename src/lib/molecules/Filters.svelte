@@ -1,9 +1,5 @@
 <script>
   import { activeFilter } from "$lib/store";
-
-  function setFilter(filter) {
-    activeFilter.set(filter);
-  }
 </script>
 
 <ul>
