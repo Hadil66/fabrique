@@ -10,32 +10,51 @@
   <li>
     <button
       on:mouseover={() => activeFilter.set("*")}
-      on:mouseleave={() => ($activeFilter = "*")}>All objects</button
-    >
+      on:mouseleave={() => ($activeFilter = "*")}>
+      All objects
+    </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set("Pottery")}
-      on:mouseleave={() => ($activeFilter = "*")}>Pottery</button
-    >
+      on:mouseover={() => activeFilter.set(technieken[1])}
+      on:mouseleave={() => ($activeFilter = "*")}>
+      {technieken[1]}
+    </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set("Islamic art")}
-      on:mouseleave={() => ($activeFilter = "*")}>Islamic art</button
-    >
+      on:mouseover={() => activeFilter.set(technieken[2])}
+      on:mouseleave={() => ($activeFilter = "*")}>
+      {technieken[2]}
+    </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set("Tapestry")}
-      on:mouseleave={() => ($activeFilter = "*")}>Tapestry</button
-    >
+      on:mouseover={() => activeFilter.set(technieken[3])}
+      on:mouseleave={() => ($activeFilter = "*")}>
+      {technieken[3]}
+    </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set("Glass")}
-      on:mouseleave={() => ($activeFilter = "*")}>Glass</button
-    >
+      on:mouseover={() => activeFilter.set(technieken[4])}
+      on:mouseleave={() => ($activeFilter = "*")}>
+      {technieken[4]}
+    </button>
+  </li>
+  <li>
+    <button
+      on:mouseover={() => activeFilter.set(technieken[5])}
+      on:mouseleave={() => ($activeFilter = "*")}>
+      {technieken[5]}
+    </button>
+  </li>
+  <li>
+    <button
+      on:mouseover={() => activeFilter.set(technieken[6])}
+      on:mouseleave={() => ($activeFilter = "*")}>
+      {technieken[6]}
+    </button>
   </li>
 </ul>
 
@@ -85,7 +104,7 @@
     text-align: center;
     list-style-type: "";
     transition: 0.5s;
-    width: max-content;
+    width: max-content;            
   }
 
   @media (prefers-reduced-motion: no-preference) {

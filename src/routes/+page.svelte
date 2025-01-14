@@ -19,10 +19,17 @@ function handleScroll() {
   }
 }
   
-import { activeFilter } from "$lib/store";
+	import { activeFilter } from "$lib/store";
 	import Filters from "$lib/molecules/Filters.svelte";
   
-	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
+	const technieken = {
+    1: "Pottery",
+    2: "Islamic art",
+    3: "Tapestry",
+	4: "Glass",
+	5: "Painting",
+	6: "Photography"
+  };
   </script>
 
 <Header />
@@ -33,9 +40,8 @@ bind:this={scrollContainer}
 	{#each data.artObjects as art, index}
 	  <li
 		class="masonry-item"
-		class:hidden={$activeFilter !== "*" &&
-		  $activeFilter !== techniques[index % techniques.length]}
-		data-category={techniques[index % techniques.length]}
+		class:hidden={$activeFilter !== "*" && !technieken.includes($activeFilter)}
+		data-category={technieken.join(", ")}
 	  >
 		<figure>
 		  <picture>
