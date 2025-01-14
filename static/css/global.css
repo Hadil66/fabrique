@@ -25,3 +25,20 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+      font-family: 'DIN Next', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+h3 {
+    margin: 0 0 1em 0.5em;
+}
