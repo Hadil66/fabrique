@@ -1,16 +1,15 @@
 <script>
 	import { activeFilter } from "$lib/store";
 	import Header from '$lib/molecules/Header.svelte';
-  import ArtObject from '$lib/molecules/ArtObject.svelte';
-  import Lenis from '@studio-freight/lenis';
-  import { onMount, onDestroy } from 'svelte';
+  	import ArtObject from '$lib/molecules/ArtObject.svelte';
+  	import Lenis from '@studio-freight/lenis';
+  	import { onMount, onDestroy } from 'svelte';
 	import Searchbar from '$lib/molecules/searchbar.svelte';
 	import Filters from "$lib/molecules/Filters.svelte";
 
 	export let data;
   
-  
-  let lenis;
+	let lenis;
 	let filterText = '';
 	let scrollContainer; 
 
@@ -24,32 +23,32 @@
 		return scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2
 	}
 	
-function backToHalfScrollWidth(){
+	function backToHalfScrollWidth(){
 		scrollContainer.scrollLeft -= scrollContainer.scrollWidth / 2;
 	}
 
-  			onMount(() => {
-			// Initialize Lenis
-			lenis = new Lenis({ infinite: true, syncTouch: true });
+	onMount(() => {
+	// Initialize Lenis
+	lenis = new Lenis({ infinite: true, syncTouch: true });
 
-			// Define the requestAnimationFrame function
-			function onRaf(time) {
-			lenis.raf(time);
-			requestAnimationFrame(onRaf);
-			}
+	// Define the requestAnimationFrame function
+	function onRaf(time) {
+	lenis.raf(time);
+	requestAnimationFrame(onRaf);
+	}
 
-			// Start the animation frame loop
-			requestAnimationFrame(onRaf);
-			});
+	// Start the animation frame loop
+	requestAnimationFrame(onRaf);
+	});
 
-			onDestroy(() => {
-				// Cleanup if necessary (e.g., stop the animation frame)
-				lenis = null; // or any other cleanup logic if required
-			});console.log('Scroll container:', scrollContainer);
-			console.log('Active filter:', $activeFilter);
-			console.log('Techniques:', techniques);
-			console.log('Lenis:', lenis);
-  </script>
+	onDestroy(() => {
+		// Cleanup if necessary (e.g., stop the animation frame)
+		lenis = null; // or any other cleanup logic if required
+	});console.log('Scroll container:', scrollContainer);
+	console.log('Active filter:', $activeFilter);
+	console.log('Techniques:', techniques);
+	console.log('Lenis:', lenis);
+</script>
 
 <Header />
 
