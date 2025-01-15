@@ -51,7 +51,7 @@
 	console.log('Lenis:', lenis);
 
 
-	const technieken = {
+	const techniques = {
 		1: "Pottery",
 		2: "Islamic art",
 		3: "Tapestry",
