@@ -43,7 +43,7 @@
 		position: relative;
 		overflow: hidden;
 		transition: opacity 0.3s;
-		width: 60%;
+		width: 100%;
 	}
 
 	.masonry-item:focus {
