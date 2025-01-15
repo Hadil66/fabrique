@@ -68,7 +68,7 @@ bind:this={scrollContainer}
 
 <style>
 	.scroll-container {
-		display: flex;
+		display: grid;
 		overflow-x: auto;
 		padding: 1rem;
 		margin: 2.5rem;
@@ -80,6 +80,7 @@ bind:this={scrollContainer}
 		column-gap: 1rem;
 		list-style: none;
 		padding: 0;
+		width: 200vw;
 	}
 
 	@media (min-width: 600px) {
