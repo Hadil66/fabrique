@@ -9,7 +9,7 @@
 
 	  export let data;
   
-	  let scrollContainerH;
+	  let scrollContainer;
   	let lenis;
  
     function handleScroll() {
