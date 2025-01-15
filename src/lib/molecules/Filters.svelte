@@ -5,51 +5,44 @@
 <ul>
   <li>
     <button
-      on:mouseover={() => activeFilter.set("*")}
-      on:mouseleave={() => ($activeFilter = "*")}>
+      on:mouseover={() => ()}
+      on:mouseleave={() => ()}>
       All objects
     </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set(technieken[1])}
-      on:mouseleave={() => ($activeFilter = "*")}>
-      {technieken[1]}
+      on:mouseover={() => ()}
+      on:mouseleave={() => ()}>
+      Pottery
     </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set(technieken[2])}
-      on:mouseleave={() => ($activeFilter = "*")}>
-      {technieken[2]}
+      on:mouseover={() => ()}
+      on:mouseleave={() => ()}>
+      Islamic art
     </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set(technieken[3])}
-      on:mouseleave={() => ($activeFilter = "*")}>
-      {technieken[3]}
+      on:mouseover={() => ()}
+      on:mouseleave={() => ()}>
+      Tapestry
     </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set(technieken[4])}
-      on:mouseleave={() => ($activeFilter = "*")}>
-      {technieken[4]}
+      on:mouseover={() => ()}
+      on:mouseleave={() => ()}>
+      Glass
     </button>
   </li>
   <li>
     <button
-      on:mouseover={() => activeFilter.set(technieken[5])}
-      on:mouseleave={() => ($activeFilter = "*")}>
-      {technieken[5]}
-    </button>
-  </li>
-  <li>
-    <button
-      on:mouseover={() => activeFilter.set(technieken[6])}
-      on:mouseleave={() => ($activeFilter = "*")}>
-      {technieken[6]}
+      on:mouseover={() => ()}
+      on:mouseleave={() => ()}>
+      Photography
     </button>
   </li>
 </ul>
