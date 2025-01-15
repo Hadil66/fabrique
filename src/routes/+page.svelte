@@ -16,6 +16,9 @@
         if (pastHalfScrollWidth()) { 
         backToHalfScrollWidth()
         }
+		if (pastHalfScrollHeight()) { 
+			backToHalfScrollHeight()
+  		}
     }
 
     function pastHalfScrollWidth() {
@@ -23,6 +26,13 @@
     }
 
     function backToHalfScrollWidth(){
+      scrollContainer.scrollLeft -= scrollContainer.scrollWidth / 2;
+    }
+	function pastHalfScrollHeight() {
+      return scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2
+    }
+
+    function backToHalfScrollHeight(){
       scrollContainer.scrollLeft -= scrollContainer.scrollWidth / 2;
     }
 
