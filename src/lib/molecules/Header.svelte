@@ -9,7 +9,7 @@
 </script>
 
 <nav>
-    <a href="#">
+    <a href="/">
         <div class="logo-container">
             <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums">
             <p class="title">  <span>متاحف قطر</span> Qatar Museums</p>  
@@ -18,29 +18,29 @@
     <ul>
         <li>
             <span>قصص</span>
-            <a href="#"> STORIES</a>
+            <a href="/"> STORIES</a>
         </li>
         <li>
             <span>ما هو الجديد</span> 
-            <a href="#"> WHAT'S ON</a>
+            <a href="/"> WHAT'S ON</a>
         </li>
         <li>
             <span>المجموعة</span> 
-            <a href="#"> COLLECTION</a>
+            <a href="/"> COLLECTION</a>
         </li>
         <li>
             <span>زيارة</span> 
-            <a href="#">VISIT</a>
+            <a href="/">VISIT</a>
         </li>
         <li>
-            <a  class="ticket-nav-item" href="#"> TICKETS</a>
+            <a  class="ticket-nav-item" href="/"> TICKETS</a>
            </li>
         <li>
-            <a href="#"> MEMBERS</a>
+            <a href="/"> MEMBERS</a>
            
         </li>
         <li>
-            <a href="#">VENUES</a>
+            <a href="/">VENUES</a>
             
         </li>
         
@@ -61,7 +61,7 @@ nav {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid /000;
     width: 100%;
     height: 4rem;
     position: fixed;
@@ -74,6 +74,7 @@ a {
     color:#000;
     text-decoration: none;
 }
+
 .title {
     margin-left: 0.5rem;    
     white-space: nowrap;  

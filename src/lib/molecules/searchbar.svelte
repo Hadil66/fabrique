@@ -1,5 +1,6 @@
 <script>
-    	import Search from '$lib/Search.svelte'; // Icoon wordt gebruikt voor de searchbar
+    	import SearchIcon from '$lib/SearchIcon.svelte'; 
+
         let filterText = '';
 </script>
 
@@ -12,17 +13,14 @@
 			placeholder="Search the collection"
 		/>
 		<button type="submit" class="searchButton" aria-label="Submit search">
-			<Search />
+			<SearchIcon />
 		</button>
 	</div>
 </div>
 
 <style>
-
-    
 /* import font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap');
-
 
 .search {
     width: 100vw;
@@ -44,10 +42,6 @@
     height: 1px; 
     background-color: black;
 }
-/* .search.loading::after {
-    animation: loadingAnimation 1s infinite ease-in-out;
-} */
-
 
 .searchTerm {
     flex: 1; 
@@ -70,7 +64,7 @@
     width: 4em;
     height: 100%; 
     border: none; 
-    background: transparent; /* Same background as the search bar */
+    background: transparent; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,13 +74,6 @@
     cursor: pointer;
 }
 
-.searchButton i {
-    display: block;
-    width: 20px;
-    height: 20px;
-    background: url('path-to-your-search-icon.svg') no-repeat center;
-
-}
 .searchButton:hover {
     transform: scale(1.2);
 }
@@ -102,25 +89,14 @@
     width: 0;
 }
 50% {
-    width: 100%; /* Expand to full width */
+    width: 100%;
 }
 100% {
-    width: 0; /* Shrink back to 0 */
+    width: 0; 
 }
 }
-
-
 
 @media only screen and (min-width: 600px) {
-    /* Code voor filter buttons */
-    .filteredList {
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 6.7em;
-    }
-
-    /* Code voor zoekbalk  */
     .wrap {
         position: absolute;
         bottom: 6em;
@@ -136,5 +112,4 @@
         transform: translateX(-50%);
     }
 }
-
 </style>
