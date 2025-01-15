@@ -1,5 +1,5 @@
 <script>
-	import { activeFilter } from "$lib/store";
+	// import { activeFilter } from "$lib/store";
 	import Header from '$lib/molecules/Header.svelte';
   	import ArtObject from '$lib/molecules/ArtObject.svelte';
   	import Lenis from '@studio-freight/lenis';
@@ -10,7 +10,6 @@
 	export let data;
   
 	let lenis;
-	let filterText = '';
 	let scrollContainer; 
 
 	function handleScroll() {
@@ -45,8 +44,8 @@
 		// Cleanup if necessary (e.g., stop the animation frame)
 		lenis = null; // or any other cleanup logic if required
 	});console.log('Scroll container:', scrollContainer);
-	console.log('Active filter:', $activeFilter);
-	console.log('Techniques:', techniques);
+	// console.log('Active filter:', $activeFilter);
+	// console.log('Techniques:', techniques);
 	console.log('Lenis:', lenis);
 </script>
 
