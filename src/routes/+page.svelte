@@ -47,7 +47,6 @@
 		lenis = null; // or any other cleanup logic if required
 	});console.log('Scroll container:', scrollContainer);
 	console.log('Active filter:', $activeFilter);
-	console.log('Techniques:', techniques);
 	console.log('Lenis:', lenis);
 
 </script>
