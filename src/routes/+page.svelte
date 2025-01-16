@@ -51,7 +51,7 @@
 
 	let filteredArtObjects = data;  
 	
-	$: filteredArtObjects = data.filter(art => {
+	filteredArtObjects = data.filter(art => {
 		return $activeFilter === 'All' || art.technique === $activeFilter;
 	});
 </script>
