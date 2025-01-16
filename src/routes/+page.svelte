@@ -50,15 +50,6 @@
 	console.log('Techniques:', techniques);
 	console.log('Lenis:', lenis);
 
-
-	const techniques = {
-		1: "Pottery",
-		2: "Islamic art",
-		3: "Tapestry",
-		4: "Glass",
-		5: "Painting",
-		6: "Photography"
-	};
 </script>
 
 <Header />

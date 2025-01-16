@@ -1,50 +1,28 @@
 <script>
-  import { activeFilter } from "$lib/store";
+  // import { activeFilter } from "$lib/store";
+
+  const techniques = {
+		1: "Pottery",
+		2: "Islamic art",
+		3: "Tapestry",
+		4: "Glass",
+		5: "Painting",
+		6: "Photography"
+	};
+
+
 </script>
 
 <ul>
-  <li>
-    <button
-      on:mouseover={() => ()}
-      on:mouseleave={() => ()}>
-      All objects
-    </button>
-  </li>
-  <li>
-    <button
-      on:mouseover={() => ()}
-      on:mouseleave={() => ()}>
-      Pottery
-    </button>
-  </li>
-  <li>
-    <button
-      on:mouseover={() => ()}
-      on:mouseleave={() => ()}>
-      Islamic art
-    </button>
-  </li>
-  <li>
-    <button
-      on:mouseover={() => ()}
-      on:mouseleave={() => ()}>
-      Tapestry
-    </button>
-  </li>
-  <li>
-    <button
-      on:mouseover={() => ()}
-      on:mouseleave={() => ()}>
-      Glass
-    </button>
-  </li>
-  <li>
-    <button
-      on:mouseover={() => ()}
-      on:mouseleave={() => ()}>
-      Photography
-    </button>
-  </li>
+  {#each Object.entries(techniques) as [key, value]}
+    <li>
+      <button
+        on:mouseover={() => console.log(`Mouse over ${value}`)}
+        on:mouseleave={() => console.log(`Mouse leave ${value}`)}>
+        {value}
+      </button>
+    </li>
+  {/each}
 </ul>
 
 <style>
