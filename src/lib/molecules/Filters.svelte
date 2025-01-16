@@ -1,28 +1,43 @@
 <script>
-  // import { activeFilter } from "$lib/store";
+  import { activeFilter } from "$lib/store";
+  import ArtObject from './ArtObject.svelte';
 
-  const techniques = {
-		1: "Pottery",
-		2: "Islamic art",
-		3: "Tapestry",
-		4: "Glass",
-		5: "Painting",
-		6: "Photography"
-	};
+  export let artObjects = []; 
+  let filteredArtObjects = artObjects; 
 
+  function filterArtObjects(technique) {
+    if (technique === 'All') {
+      filteredArtObjects = artObjects;
+    } else {
+      filteredArtObjects = artObjects.filter(art => art.technique === technique);
+    }
+  }
+
+  function isHidden(art) {
+    return !filteredArtObjects.includes(art);
+  }
 
 </script>
 
 <ul>
-  {#each Object.entries(techniques) as [key, value]}
-    <li>
-      <button
-        on:mouseover={() => console.log(`Mouse over ${value}`)}
-        on:mouseleave={() => console.log(`Mouse leave ${value}`)}>
-        {value}
-      </button>
-    </li>
-  {/each}
+  <li>
+    <button on:click={() => filterArtObjects('All')}>All objects</button>
+  </li>
+  <li>
+    <button on:click={() => filterArtObjects('Pottery')}>Pottery</button>
+  </li>
+  <li>
+    <button on:click={() => filterArtObjects('Islamic art')}>Islamic art</button>
+  </li>
+  <li>
+    <button on:click={() => filterArtObjects('Tapestry')}>Tapestry</button>
+  </li>
+  <li>
+    <button on:click={() => filterArtObjects('Glass')}>Glass</button>
+  </li>
+  <li>
+    <button on:click={() => filterArtObjects('Photography')}>Photography</button>
+  </li>
 </ul>
 
 <style>

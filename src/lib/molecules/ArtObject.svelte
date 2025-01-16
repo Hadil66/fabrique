@@ -1,8 +1,10 @@
 <script>
 	export let art
+	export let hidden = false; 
+	
 </script>
 
-<li class="masonry-item">
+<li class="masonry-item {hidden ? 'hidden' : ''}">
 	<figure>
 		<picture>
 			<source
@@ -59,6 +61,12 @@
 	.masonry-item:focus figcaption {
 		opacity: 1;
 	}
+
+	.masonry-item.hidden {
+    filter: opacity(0.3);
+    pointer-events: none;
+    transition: 1s;
+	} 
 
 	figure {
 		margin: 0;

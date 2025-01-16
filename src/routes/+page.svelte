@@ -57,7 +57,7 @@
 bind:this={scrollContainer}
   on:scroll={handleScroll}>
   <ul class="masonry">
-	{#each data.artObjects as art}
+    {#each filteredArtObjects as art}
 	  <ArtObject art={art} />
 	{/each}
   </ul>
