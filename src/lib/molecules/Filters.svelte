@@ -2,15 +2,16 @@
   import { activeFilter } from "$lib/store";
   import ArtObject from './ArtObject.svelte';
 
-  export let artObjects = []; 
   let filteredArtObjects = artObjects; 
 
+  let filters = ['Pottery', 'Islamic art', 'Tapestry', 'Glass', 'Photography'];
+
+  $: filteredArtObjects = artObjects.filter(art => {
+    return $activeFilter === 'All' || art.technique === $activeFilter;
+  });
+
   function filterArtObjects(technique) {
-    if (technique === 'All') {
-      filteredArtObjects = artObjects;
-    } else {
-      filteredArtObjects = artObjects.filter(art => art.technique === technique);
-    }
+    activeFilter.set(technique); 
   }
 
   function isHidden(art) {
@@ -23,21 +24,11 @@
   <li>
     <button on:click={() => filterArtObjects('All')}>All objects</button>
   </li>
-  <li>
-    <button on:click={() => filterArtObjects('Pottery')}>Pottery</button>
-  </li>
-  <li>
-    <button on:click={() => filterArtObjects('Islamic art')}>Islamic art</button>
-  </li>
-  <li>
-    <button on:click={() => filterArtObjects('Tapestry')}>Tapestry</button>
-  </li>
-  <li>
-    <button on:click={() => filterArtObjects('Glass')}>Glass</button>
-  </li>
-  <li>
-    <button on:click={() => filterArtObjects('Photography')}>Photography</button>
-  </li>
+  {#each filters as filter}
+    <li>
+      <button on:click={() => filterArtObjects(filter)}>{filter} </button>
+    </li>
+  {/each}
 </ul>
 
 <style>

@@ -1,10 +1,9 @@
 <script>
 	export let art
-	export let hidden = false; 
 	
 </script>
 
-<li class="masonry-item {hidden ? 'hidden' : ''}">
+<li class="masonry-item" hidden={isHidden(art)}>
 	<figure>
 		<picture>
 			<source
