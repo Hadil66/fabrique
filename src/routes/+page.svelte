@@ -83,15 +83,9 @@ bind:this={scrollContainer}
 		width: 200vw;
 	}
 
-	@media (min-width: 400px) {
+	@media (min-width: 600px) {
 		.masonry {
-			column-count: 1;
-		}
-	}
-
-	@media (min-width: 500px) {
-		.masonry {
-			column-count: 2;
+			column-count: 4;
 		}
 	}
 
