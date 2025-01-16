@@ -1,9 +1,17 @@
 <script>
-	export let art
-	
-</script>
-
-<li class="masonry-item" hidden={isHidden(art)}>
+	import { activeFilter } from "$lib/store";
+	export let art;
+  
+	let isHidden = false;
+  
+	$: isHidden = $activeFilter !== "*" && !artMatchesFilter(art);
+  
+	function artMatchesFilter(art) {
+	  return art.technique === $activeFilter || $activeFilter === 'All';
+	}
+  </script>
+  
+  <li class="masonry-item" class:hidden={isHidden}>
 	<figure>
 		<picture>
 			<source

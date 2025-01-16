@@ -49,6 +49,11 @@
 	console.log('Active filter:', $activeFilter);
 	console.log('Lenis:', lenis);
 
+	let filteredArtObjects = data;  
+	
+	$: filteredArtObjects = data.filter(art => {
+		return $activeFilter === 'All' || art.technique === $activeFilter;
+	});
 </script>
 
 <Header />

@@ -1,23 +1,11 @@
 <script>
   import { activeFilter } from "$lib/store";
-  import ArtObject from './ArtObject.svelte';
-
-  let filteredArtObjects = artObjects; 
-
+  
   let filters = ['Pottery', 'Islamic art', 'Tapestry', 'Glass', 'Photography'];
 
-  $: filteredArtObjects = artObjects.filter(art => {
-    return $activeFilter === 'All' || art.technique === $activeFilter;
-  });
-
   function filterArtObjects(technique) {
-    activeFilter.set(technique); 
+    activeFilter.set(technique);
   }
-
-  function isHidden(art) {
-    return !filteredArtObjects.includes(art);
-  }
-
 </script>
 
 <ul>
@@ -26,7 +14,7 @@
   </li>
   {#each filters as filter}
     <li>
-      <button on:click={() => filterArtObjects(filter)}>{filter} </button>
+      <button on:click={() => filterArtObjects(filter)}>{filter}</button>
     </li>
   {/each}
 </ul>
