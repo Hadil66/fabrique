@@ -85,7 +85,7 @@ bind:this={scrollContainer}
 
 	@media (min-width: 600px) {
 		.masonry {
-			column-count: 2;
+			column-count: 3;
 		}
 	}
 

@@ -43,7 +43,7 @@
 		position: relative;
 		overflow: hidden;
 		transition: opacity 0.3s;
-		width: 100%;
+		width:39%;
 	}
 
 	.masonry-item:focus {
@@ -97,6 +97,12 @@
 		-webkit-text-stroke: 0.2px #ffff00;
 	}
 
+	@media (min-width: 900px) {
+		.masonry-item {
+			width: 100%;
+		}
+	}
+	
     @media (min-width: 900px) {
 		h2 {
 			font-size: 1.5rem;
