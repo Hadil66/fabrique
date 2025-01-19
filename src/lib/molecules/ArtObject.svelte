@@ -51,11 +51,6 @@
 		outline-offset: 3px;
 	}
 
-	.masonry-item:hover img,
-	.masonry-item:focus img {
-		transform: scale(1.1);
-	}
-
 	.masonry-item:hover figcaption,
 	.masonry-item:focus figcaption {
 		opacity: 1;
@@ -93,8 +88,10 @@
 	h2 {
 		font-size: 16px;
 		margin: 0.5rem 0;
-		text-align: center;
-		-webkit-text-stroke: 0.2px #ffff00;
+		font-weight: 100;
+		position: absolute;
+		left: 10px;
+		bottom: 0;
 	}
 
 	@media (min-width: 600px) {
@@ -107,10 +104,6 @@
 	@media (min-width: 900px) {
 		.masonry-item {
 			width: 100%;
-		}
-
-		h2 {
-			font-size: 1.5rem;
 		}
 	}
 
