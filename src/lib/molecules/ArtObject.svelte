@@ -63,7 +63,8 @@
 
 	img {
 		width: 100%;
-		height: auto;
+		object-fit: cover;
+		height: 14em;
 		display: block;
 		border-radius: 8px;
 		transition: transform 0.3s ease-in-out;
