@@ -1,4 +1,6 @@
 <script>
+	import { activeFilter } from "$lib/store";
+
 	export let art;
 	export let techniques;
 	export let index;
