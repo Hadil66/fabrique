@@ -1,5 +1,5 @@
 <script>
-	export let art
+	export let art;
 </script>
 
 <li class="masonry-item">
@@ -7,14 +7,14 @@
 		<picture>
 			<source
 				srcset={"https://fdnd-agency.directus.app/assets/" +
-				art.image +
-				".avif"}
+					art.image +
+					".avif"}
 				type="image/avif"
 			/>
 			<source
 				srcset={"https://fdnd-agency.directus.app/assets/" +
-				art.image +
-				".webp"}
+					art.image +
+					".webp"}
 				type="image/webp"
 			/>
 			<img
@@ -33,7 +33,7 @@
 </li>
 
 <style>
-    .masonry-item {
+	.masonry-item {
 		break-inside: avoid;
 		display: block;
 		background-color: #fff;
@@ -64,6 +64,8 @@
 	img {
 		width: 100%;
 		height: auto;
+		min-height: 35vw;
+		object-fit: cover;
 		display: block;
 		border-radius: 8px;
 		transition: transform 0.3s ease-in-out;
@@ -99,7 +101,6 @@
 			width: 100%;
 		}
 	}
-
 
 	@media (min-width: 900px) {
 		.masonry-item {
