@@ -6,7 +6,6 @@
   	import { onMount, onDestroy } from 'svelte';
 	import Searchbar from '$lib/molecules/searchbar.svelte';
 	import Filters from "$lib/molecules/Filters.svelte";
-    
 
 	export let data;
   
@@ -42,13 +41,14 @@
 	});
 
 	onDestroy(() => {
-		lenis = null; 
-	});
-    console.log('Scroll container:', scrollContainer);
-
+		// Cleanup if necessary (e.g., stop the animation frame)
+		lenis = null; // or any other cleanup logic if required
+	});console.log('Scroll container:', scrollContainer);
+	// console.log('Active filter:', $activeFilter);
+	// console.log('Techniques:', techniques);
 	console.log('Lenis:', lenis);
-
-    const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
+	
+	const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
 
 </script>
 
@@ -59,24 +59,24 @@ bind:this={scrollContainer}
   on:scroll={handleScroll}>
   <div class="column-reverse">
 		<ul class="masonry">
-			{#each data.artObjects as art}
-			<ArtObject art={art} />
+			{#each data.artObjects as art, index}
+			<ArtObject art={art} techniques={techniques} index={index}/>
 			{/each}
 		</ul>
 	</div>
 
 	<div class="column">
 		<ul class="masonry">
-			{#each data.artObjects as art}
-			<ArtObject art={art} />
+			{#each data.artObjects as art, index}
+			<ArtObject art={art} techniques={techniques} index={index}/>
 			{/each}
 		</ul>
 	</div>
 
 	<div class="column-reverse">
 		<ul class="masonry">
-			{#each data.artObjects as art}
-			<ArtObject art={art} />
+			{#each data.artObjects as art, index}
+			<ArtObject art={art} techniques={techniques} index={index}/>
 			{/each}
 		</ul>
 	</div>

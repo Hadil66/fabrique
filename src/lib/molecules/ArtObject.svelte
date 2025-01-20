@@ -4,13 +4,13 @@
 	export let art;
 	export let techniques;
 	export let index;
-
 </script>
 
-<li class="masonry-item"
-  class:hidden={$activeFilter !== "*" &&
-  $activeFilter !== techniques[index % techniques.length]}
-  data-category={techniques[index % techniques.length]}>
+<li class="masonry-item" 
+class:hidden={$activeFilter !== "*" &&
+$activeFilter !== techniques[index % techniques.length]}
+data-category={techniques[index % techniques.length]}
+tabindex="0">
 	<figure>
 		<picture>
 			<source
