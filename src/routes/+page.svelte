@@ -6,6 +6,7 @@
   	import { onMount, onDestroy } from 'svelte';
 	import Searchbar from '$lib/molecules/searchbar.svelte';
 	import Filters from "$lib/molecules/Filters.svelte";
+    
 
 	export let data;
   
@@ -41,12 +42,14 @@
 	});
 
 	onDestroy(() => {
-		// Cleanup if necessary (e.g., stop the animation frame)
-		lenis = null; // or any other cleanup logic if required
-	});console.log('Scroll container:', scrollContainer);
-	// console.log('Active filter:', $activeFilter);
-	// console.log('Techniques:', techniques);
+		lenis = null; 
+	});
+    console.log('Scroll container:', scrollContainer);
+
 	console.log('Lenis:', lenis);
+
+    const techniques = ["Pottery", "Islamic art", "Tapestry", "Glass"];
+
 </script>
 
 <Header />
@@ -55,8 +58,8 @@
 bind:this={scrollContainer}
   on:scroll={handleScroll}>
   <ul class="masonry">
-	{#each data.artObjects as art}
-	  <ArtObject art={art} />
+	{#each data.artObjects as art, index}
+    <ArtObject art={art} techniques={techniques} index={index}/>
 	{/each}
   </ul>
 </div>

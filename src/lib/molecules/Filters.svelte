@@ -1,22 +1,41 @@
 <script>
   import { activeFilter } from "$lib/store";
+
+  function setFilter(filter) {
+    activeFilter.set(filter);
+  }
 </script>
 
 <ul>
   <li>
-    <button>All objects</button>
+    <button
+      on:mouseover={() => activeFilter.set("*")}
+      on:mouseleave={() => ($activeFilter = "*")}>All objects</button
+    >
   </li>
   <li>
-    <button>Pottery</button>
+    <button
+      on:mouseover={() => activeFilter.set("Pottery")}
+      on:mouseleave={() => ($activeFilter = "*")}>Pottery</button
+    >
   </li>
   <li>
-    <button>Islamic art</button>
+    <button
+      on:mouseover={() => activeFilter.set("Islamic art")}
+      on:mouseleave={() => ($activeFilter = "*")}>Islamic art</button
+    >
   </li>
   <li>
-    <button>Tapestry</button>
+    <button
+      on:mouseover={() => activeFilter.set("Tapestry")}
+      on:mouseleave={() => ($activeFilter = "*")}>Tapestry</button
+    >
   </li>
   <li>
-    <button>Glass</button>
+    <button
+      on:mouseover={() => activeFilter.set("Glass")}
+      on:mouseleave={() => ($activeFilter = "*")}>Glass</button
+    >
   </li>
 </ul>
 
