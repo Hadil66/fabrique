@@ -54,11 +54,29 @@
 <div class="scroll-container"
 bind:this={scrollContainer}
   on:scroll={handleScroll}>
-  <ul class="masonry">
-	{#each data.artObjects as art}
-	  <ArtObject art={art} />
-	{/each}
-  </ul>
+  <div class="column-reverse">
+		<ul class="masonry">
+			{#each data.artObjects as art}
+			<ArtObject art={art} />
+			{/each}
+		</ul>
+	</div>
+
+	<div class="column">
+		<ul class="masonry">
+			{#each data.artObjects as art}
+			<ArtObject art={art} />
+			{/each}
+		</ul>
+	</div>
+
+	<div class="column-reverse">
+		<ul class="masonry">
+			{#each data.artObjects as art}
+			<ArtObject art={art} />
+			{/each}
+		</ul>
+	</div>
 </div>
 
 <div>
@@ -73,6 +91,35 @@ bind:this={scrollContainer}
 		padding: 1rem;
 		margin: 2.5rem;
 		scroll-snap-type: x mandatory;
+		grid-template-columns: repeat(3, 1fr);
+		overflow-y: hidden;
+	}
+
+	.column {
+		display: flex;
+		flex-direction: column;
+		margin: 0 1em;
+	}
+
+	.column .masonry {
+		filter: blur(1.5px);
+	}
+
+	.column-reverse {
+		animation: adjust-position linear forwards;
+		animation-timeline: scroll(root block);
+		transform: translateY(calc(-100% + 100vh));
+		flex-direction: column-reverse;
+	}
+
+	@keyframes adjust-position {
+		from {
+			transform: translateY(calc(-100% + 100vh));
+		}
+
+		to {
+			transform: translateY(calc(100% - 100vh));
+		}
 	}
 
 	.masonry {
@@ -80,24 +127,5 @@ bind:this={scrollContainer}
 		column-gap: 1rem;
 		list-style: none;
 		padding: 0;
-		width: 200vw;
-	}
-
-	@media (min-width: 600px) {
-		.masonry {
-			column-count: 4;
-		}
-	}
-
-	@media (min-width: 700px) {
-		.masonry {
-			column-count: 5;
-		}
-	}
-
-	@media (min-width: 900px) {
-		.masonry {
-			column-count: 7;
-		}
-	}
+	} 
 </style>

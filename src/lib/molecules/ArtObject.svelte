@@ -2,7 +2,7 @@
 	export let art
 </script>
 
-<li class="masonry-item">
+<li class="masonry-item" tabindex="0">
 	<figure>
 		<picture>
 			<source
