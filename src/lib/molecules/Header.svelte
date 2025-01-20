@@ -97,7 +97,7 @@
     margin-right: 1rem;
     justify-content: flex-end;
     width: 100%;
-  }
+    }
 
   nav ul li {
     white-space: nowrap;
@@ -126,6 +126,7 @@
     display: block;
     text-align: center;
     font-size: 20px;
+    font-stretch: expanded;
   }
 
   /* MEDIA QUERY */
@@ -141,14 +142,13 @@
       display: flex;
     }
 
-    /* Hide all li items except .ticket-nav-item */
-    nav ul li:not(.ticket-nav-item) {
-      display: none;
+    nav ul li:not(.ticket-nav-item) { 
+      display: none; /* Hide all li items except .ticket-nav-item */
     }
   }
 
-  @media (min-width: 1020px) {
-    nav ul {
+    @media (min-width: 1020px) {
+      nav ul {
       display: flex;
       align-items: center;
       gap: 20px;
