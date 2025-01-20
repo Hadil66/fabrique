@@ -1,17 +1,8 @@
 <script>
-	import { activeFilter } from "$lib/store";
-
-	export let art;
-	export let techniques;
-	export let index;
-
+	export let art
 </script>
 
-<li class="masonry-item"
-  class:hidden={$activeFilter !== "*" &&
-  $activeFilter !== techniques[index % techniques.length]}
-  data-category={techniques[index % techniques.length]}
-  tabindex="0">
+<li class="masonry-item" tabindex="0">
 	<figure>
 		<picture>
 			<source
@@ -63,12 +54,6 @@
 	.masonry-item:hover figcaption,
 	.masonry-item:focus figcaption {
 		opacity: 1;
-	}
-
-	.masonry-item.hidden {
-		filter: opacity(0.3);
-		pointer-events: none;
-		transition: 1s;
 	}
 
 	figure {
