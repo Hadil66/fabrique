@@ -1,5 +1,5 @@
 <script>
-	// import { activeFilter } from "$lib/store";
+	import { activeFilter } from "$lib/store";
 	import Header from '$lib/molecules/Header.svelte';
   	import ArtObject from '$lib/molecules/ArtObject.svelte';
   	import Lenis from '@studio-freight/lenis';
