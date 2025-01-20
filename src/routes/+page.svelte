@@ -80,6 +80,14 @@ bind:this={scrollContainer}
 			{/each}
 		</ul>
 	</div>
+
+	<div class="column">
+		<ul class="masonry">
+			{#each data.artObjects as art, index}
+			<ArtObject art={art} techniques={techniques} index={index}/>
+			{/each}
+		</ul>
+	</div>
 </div>
 
 <div>
@@ -94,7 +102,7 @@ bind:this={scrollContainer}
 		padding: 1rem;
 		margin: 2.5rem;
 		scroll-snap-type: x mandatory;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		overflow-y: hidden;
 	}
 
