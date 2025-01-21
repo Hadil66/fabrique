@@ -1,41 +1,27 @@
 <script>
   import { activeFilter } from "$lib/store";
 
-  function setFilter(filter) {
+  function clickFilter(filter) {
     activeFilter.set(filter);
   }
+
 </script>
 
 <ul>
   <li>
-    <button
-      on:mouseover={() => activeFilter.set("*")}
-      on:mouseleave={() => ($activeFilter = "*")}>All objects</button
-    >
+    <button on:click={() => clickFilter("*")}>All objects</button>
   </li>
   <li>
-    <button
-      on:mouseover={() => activeFilter.set("Pottery")}
-      on:mouseleave={() => ($activeFilter = "*")}>Pottery</button
-    >
+    <button on:click={() => clickFilter("Pottery")}>Pottery</button>
   </li>
   <li>
-    <button
-      on:mouseover={() => activeFilter.set("Islamic art")}
-      on:mouseleave={() => ($activeFilter = "*")}>Islamic art</button
-    >
+    <button on:click={() => clickFilter("Islamic art")}>Islamic art</button>
   </li>
   <li>
-    <button
-      on:mouseover={() => activeFilter.set("Tapestry")}
-      on:mouseleave={() => ($activeFilter = "*")}>Tapestry</button
-    >
+    <button on:click={() => clickFilter("Tapestry")}>Tapestry</button>
   </li>
   <li>
-    <button
-      on:mouseover={() => activeFilter.set("Glass")}
-      on:mouseleave={() => ($activeFilter = "*")}>Glass</button
-    >
+    <button on:click={() => clickFilter("Glass")}>Glass</button>
   </li>
 </ul>
 
