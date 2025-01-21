@@ -12,24 +12,24 @@
   <a href="/">
     <div class="logo-container">
       <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums" />
-      <p class="title"><span lang="ar" dir="rtl">متاحف قطر</span> Qatar Museums</p>
+      <p class="title"><span lang="ar" dir="rtl">مـتــاحـف قـطــر</span> Qatar Museums</p>
     </div>
   </a>
   <ul>
     <li>
-      <span lang="ar" dir="rtl">قصص</span>
+      <span lang="ar" dir="rtl">قــصـص</span>
       <a href="/"> STORIES</a>
     </li>
     <li>
-      <span lang="ar" dir="rtl">ما هو الجديد</span>
+      <span lang="ar" dir="rtl">ماهوالجديد</span>
       <a href="/"> WHAT'S ON</a>
     </li>
     <li>
-      <span lang="ar" dir="rtl">المجموعة</span>
+      <span lang="ar" dir="rtl">الـمـجـمـوعــة</span>
       <a href="/"> COLLECTION</a>
     </li>
     <li>
-      <span lang="ar" dir="rtl">زيارة</span>
+      <span lang="ar" dir="rtl">زيـارة</span>
       <a href="/">VISIT</a>
     </li>
     <li>
@@ -126,6 +126,7 @@
     display: block;
     text-align: center;
     font-size: 20px;
+    margin-bottom: 3px;
   }
 
   /* MEDIA QUERY */
