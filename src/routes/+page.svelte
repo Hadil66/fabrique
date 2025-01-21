@@ -112,10 +112,6 @@ bind:this={scrollContainer}
 		margin: 0 1em;
 	}
 
-	.column .masonry {
-		filter: blur(1.5px);
-	}
-
 	.column-reverse {
 		animation: adjust-position linear forwards;
 		animation-timeline: scroll(root block);
