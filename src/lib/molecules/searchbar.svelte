@@ -1,114 +1,124 @@
 <script>
-    	import SearchIcon from '$lib/SearchIcon.svelte'; 
+	import SearchIcon from '$lib/SearchIcon.svelte';
+	import { goto } from '$app/navigation';
 
-        let filterText = '';
+	let filterText = '';
 </script>
 
 <div class="wrap">
 	<div class="search">
-		<input
-			type="text"
-			class="searchTerm"
-			bind:value={filterText}
-			placeholder="Search the collection"
-		/>
-		<button type="submit" class="searchButton" aria-label="Submit search">
-			<SearchIcon />
-		</button>
+		<form class="search-form" action="https://qm.org.qa/en/">
+			<input
+				type="text"
+				class="searchTerm"
+				bind:value={filterText}
+				placeholder="Search the collection"
+			/>
+		</form>
+		<form action="https://qm.org.qa/en/">
+			<button type="submit" class="searchButton" aria-label="Submit search">
+				<SearchIcon />
+			</button>
+		</form>
 	</div>
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap');
 
-.search {
-    width: 100vw;
-    position: relative;
-    display: flex;
-    align-items: center; 
-    border: 2px solid rgb(14, 14, 14); 
-    border-radius: 4px; 
-    overflow: hidden;
-    background: white;
-}
+	.search {
+		width: 100vw;
+		position: relative;
+		display: flex;
+		align-items: center;
+		border: 2px solid rgb(14, 14, 14);
+		border-radius: 4px;
+		overflow: hidden;
+		background: white;
+	}
 
-.search::after {
-    content: '';
-    position: absolute;	
-    bottom: 0.5em;
-    left: 0.5rem;
-    width: 93%;
-    height: 1px; 
-    background-color: black;
-}
+	.search::after {
+		content: '';
+		position: absolute;
+		bottom: 0.5em;
+		left: 0.5rem;
+		width: 93%;
+		height: 1px;
+		background-color: black;
+	}
 
-.searchTerm {
-    flex: 1; 
-    border: none; 
-    padding: 0.5em 0.5em;
-    font-family: 'Roboto condensed', sans-serif;
-    font-size: 24px;
-    background: transparent;
-}
+	.search-form {
+		display: flex;
+		width: inherit;
+	}
 
-/* text styling */
-.searchTerm::placeholder {
-    color: #000000;
-    text-transform: uppercase;
-    font-weight: 500; 
-    letter-spacing: 0.1rem;
-}
+	.searchTerm {
+		flex: 1;
+		border: none;
+		padding: 0.5em 0.5em;
+		font-family: 'Roboto condensed', sans-serif;
+		font-size: 24px;
+		background: transparent;
+	}
 
-.searchButton {
-    width: 4em;
-    height: 100%; 
-    border: none; 
-    background: transparent; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin-left: 0.3rem;
+	/* text styling */
+	.searchTerm::placeholder {
+		color: #000000;
+		text-transform: uppercase;
+		font-weight: 500;
+		letter-spacing: 0.1rem;
+	}
 
-    cursor: pointer;
-}
+	.searchButton {
+		width: 4em;
+		height: 100%;
+		border: none;
+		background: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		margin-left: 0.3rem;
 
-.searchButton:hover {
-    transform: scale(1.2);
-}
+		cursor: pointer;
+	}
 
-.wrap {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+	.searchButton:hover {
+		transform: scale(1.2);
+	}
 
-@keyframes loadingAnimation {
-0% {
-    width: 0;
-}
-50% {
-    width: 100%;
-}
-100% {
-    width: 0; 
-}
-}
+	.wrap {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
 
-@media only screen and (min-width: 600px) {
-    .wrap {
-        position: absolute;
-        bottom: 6em;
-        left: 2em;
-        right: 2em;
-    }
+	@keyframes loadingAnimation {
+		0% {
+			width: 0;
+		}
+		50% {
+			width: 100%;
+		}
+		100% {
+			width: 0;
+		}
+	}
 
-    .search {
-        width: 60vw;
-        position: fixed;
-        display: flex;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
+	@media only screen and (min-width: 600px) {
+		.wrap {
+			position: absolute;
+			bottom: 6em;
+			left: 2em;
+			right: 2em;
+		}
+
+		.search {
+			width: 60vw;
+			position: fixed;
+			display: flex;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
 </style>
