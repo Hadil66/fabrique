@@ -13,7 +13,7 @@
     viewBox="0 0 24 24"
     fill="none"
   >
-    <div id="Menu / Menu_Duo_MD">
+    <g>
       <path
         id="Vector"
         d="M5 15H19M5 9H19"
@@ -22,7 +22,7 @@
         stroke-linecap="round"
         stroke-linejoin="round"
       />
-    </div>
+    </g>
   </svg>
 
   <span class="hidden-text">Menu</span>
