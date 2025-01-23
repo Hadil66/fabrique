@@ -12,9 +12,11 @@
 			bind:value={filterText}
 			placeholder="Search the collection"
 		/>
-		<button type="submit" class="searchButton" aria-label="Submit search">
+        <form action="https://qm.org.qa/en/">
+		<button type="submit"  action="https://qm.org.qa/en/" class="searchButton" aria-label="Submit search">
 			<SearchIcon />
 		</button>
+    </form>
 	</div>
 </div>
 
