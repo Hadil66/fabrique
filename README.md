@@ -44,3 +44,6 @@ This project came together thanks to:
 
 ## Contribution
 We've set some [guidelines](https://github.com/Hadil66/fabrique/blob/main/contributing.md) for whomever wants to contribute to this project. 
+
+## Licence
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Hadil66/fabrique/blob/main/LICENSE) file for details.
