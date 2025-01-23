@@ -4,7 +4,6 @@
   function clickFilter(filter) {
     activeFilter.set(filter);
   }
-
 </script>
 
 <ul>

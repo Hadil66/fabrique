@@ -1,5 +1,5 @@
 <script>
-  import Dropdown from "$lib/Dropdown.svelte";
+  import Dropdown from "$lib/molecules/Dropdown.svelte";
 
   let showMenu = false;
 
@@ -12,7 +12,9 @@
   <a href="/">
     <div class="logo-container">
       <img class="logo-qatar" src="/logo-qatar.png" alt="Qatar Museums" />
-      <p class="title"><span lang="ar" dir="rtl">مـتــاحـف قـطــر</span> Qatar Museums</p>
+      <p class="title">
+        <span lang="ar" dir="rtl">مـتــاحـف قـطــر</span> Qatar Museums
+      </p>
     </div>
   </a>
   <ul>

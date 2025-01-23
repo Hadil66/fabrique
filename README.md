@@ -24,10 +24,6 @@ Everything you need to build a Svelte project, powered by [`sv`](https://github.
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-##Installatie 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
 # create a new project in the current directory
