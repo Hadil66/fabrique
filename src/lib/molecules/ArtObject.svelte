@@ -11,6 +11,7 @@
   class:hidden={$activeFilter !== "*" &&
     $activeFilter !== techniques[index % techniques.length]}
   data-category={techniques[index % techniques.length]}
+  tabindex="0"
 >
   <figure>
     <picture>
