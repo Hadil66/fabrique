@@ -13,7 +13,7 @@
     viewBox="0 0 24 24"
     fill="none"
   >
-    <g id="Menu / Menu_Duo_MD">
+    <g>
       <path
         id="Vector"
         d="M5 15H19M5 9H19"
@@ -46,7 +46,6 @@
 
       <button>
         <svg
-          scale="0."
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           fill="#000000"
